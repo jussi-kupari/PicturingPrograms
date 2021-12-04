@@ -1,0 +1,5 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex1816_UNFINISHED) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;Exercise 18.1.6
+;Modify exercise 18.1.1 so that rather than adding a pure-red dot, it adds a drop of red dye at the mouse location. The dye adds a certain amount to the red component of the picture, varying with distance from where it was dropped: for example, if it added 100 to the red component right at the mouse location, it might add 50 to the neighboring pixels, 33 to the pixels 2 units away, 25 to the pixels 3 units away, and so on. The green and blue components of the picture should be unchanged. Hint: Use map3-image.
