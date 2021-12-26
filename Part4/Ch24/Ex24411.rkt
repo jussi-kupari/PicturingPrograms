@@ -5,6 +5,8 @@
 Essay question: Notice that I’ve picked some of the functions from
 Section 24.1 to re-do using the binary template. Why did I pick these and not the others?
 What kind of function lends itself to solving with the binary template, and what kind
-doesn’t?|#
+doesn’t?
+
+Answer: All these problems used incremental additions and substractions (add1, sub1)|#
 
 

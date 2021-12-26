@@ -2,8 +2,8 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex24110) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 #|Exercise 24.1.10
-Develop a function named dot-grid (remember this from Chap-
-ter 5?) that takes two whole numbers width and height and produces a rectangular grid
+Develop a function named dot-grid (remember this from Chapter 5?) that takes two
+whole numbers width and height and produces a rectangular grid
 of circles with width columns and height rows.|#
 
 (require picturing-programs)
@@ -37,7 +37,7 @@ of circles with width columns and height rows.|#
 
 
 ;; render-dot-row : Natural -> Image
-;; Given a natural, producea row of dots of that size
+;; Given a natural, produces row of dots of that size
 (check-expect (render-dot-row 0) (circle 0 "solid" "white"))
 (check-expect (render-dot-row 1) DOT)
 (check-expect (render-dot-row 2) (beside DOT (beside DOT (circle 0 "solid" "white"))))
