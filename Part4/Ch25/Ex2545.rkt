@@ -15,8 +15,6 @@ list.|#
 ;; - (cons String LOS)
 ;; interp. LOS is a list of strings
 
-
-
 ;; -- Functions
 
 ;; intersection : LOS LOS -> LOS
