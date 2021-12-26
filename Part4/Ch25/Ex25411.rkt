@@ -6,7 +6,7 @@ Develop a function binary-raise that takes in two natural num-
 bers m and n and returns m^n, using the binary template (and not using the built-in +, *,
 or expt functions).
 
-These are horribly inneficient!!|#
+These are horribly inefficient!!|#
 
 ;; -- Functions
 
