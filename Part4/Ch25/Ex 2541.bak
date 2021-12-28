@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname |Ex 2541|) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #t)))
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname |Ex 2541_WOP|) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #t)))
 #|Exercise 25.4.1
 Develop a function cart-prod (short for “Cartesian product”) that
 takes in two lists and returns a list of two-element lists, each with an
@@ -11,7 +11,7 @@ in the second list (although there might be things that are in both input lists.
 
 Hint: You’ll need a helper function.
 
-Note: I am working with strings here.|#
+Note: I am woring with strings here.|#
 
 ;; -- Data Definitions
 
