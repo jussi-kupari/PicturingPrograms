@@ -23,7 +23,6 @@ I don’t think there’s a built-in Racket function that will help much with th
 case, I want you to do this using only char=?, comparing one character at a time.
 Hint: Perhaps surprisingly, this problem is easier than substring?.|#
 
-
 ;; -- Functions
 
 ;; subsequence? : String String -> Boolean

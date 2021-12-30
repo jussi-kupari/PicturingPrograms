@@ -16,4 +16,3 @@ numbers (as we’ve defined them).|#
   (... (frac-numerator f)       
        (frac-denominator f)))   
 |#
-

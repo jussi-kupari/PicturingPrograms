@@ -5,7 +5,6 @@
 Develop a function wn-add to add two whole numbers,
 without using any built-in arithmetic operators except add1, sub1, zero?, and positive?.|#
 
-
 ;; wn-add : Natural Natural -> Natural
 ;; Given two naural numbers, produces their sum
 (check-expect (wn-add 0 0) 0)

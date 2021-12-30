@@ -10,7 +10,6 @@ ending with 1, and the strings should be in the order they were given. For examp
 (check-expect (label-names (list "anne" "bob" "charlie") 3)
 (list (list 3 "anne") (list 2 "bob") (list 1 "charlie")))|#
 
-
 ;; -- Data Definition
 
 ;; List-of-Strings (LOS) is one of:

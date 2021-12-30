@@ -13,7 +13,6 @@ squares from 0 up to the given number.|#
 ;; - (cons Posn LOP)
 ;; interp. a list of Posns
 
-
 ;; -- Functions
 
 ;; increasing-table-of-squares : Natural -> LOP
@@ -26,7 +25,6 @@ squares from 0 up to the given number.|#
 
 (define (increasing-table-of-squares n) ; function composition
   (sort-increasing (create-lop n)))
-
 
 ;; create-lop : Natural -> LOP
 ;; Given a Natural, produces a LOP of the numbers and their squares down to zero
@@ -43,8 +41,6 @@ squares from 0 up to the given number.|#
     [else
      (cons (make-posn n (sqr n))
            (create-lop (sub1 n)))]))
-
-
 
 ;; sort-increasing : LOP -> LOP
 ;; Given a LOP, sorts it in increasing order of number size
@@ -63,7 +59,6 @@ squares from 0 up to the given number.|#
     [else
      (insert (first lop)
           (sort-increasing (rest lop)))])) ;remember that the result of NR is already sorted!!
-
 
 ;; insert : Posn LOP -> LOP
 ;; Given a Posn and a *SORTED* LOP, insert the Posn in the correct position in the LOP
@@ -84,7 +79,6 @@ squares from 0 up to the given number.|#
          (cons (first lop) (insert pos (rest lop)))
           (cons pos lop))]))
 
-
 ;; larger? : Posn Posn -> Boolean
 ;; Given two Posns, produces true if the first one has larger posn-x
 (check-expect (larger? (make-posn 0 0) (make-posn 0 0)) false)
@@ -93,7 +87,3 @@ squares from 0 up to the given number.|#
 
 (define (larger? pos1 pos2)
   (> (posn-x pos1) (posn-x pos2)))
-
-
-
-

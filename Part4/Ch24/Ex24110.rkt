@@ -28,13 +28,11 @@ of circles with width columns and height rows.|#
         (above (beside DOT (beside DOT (circle 0 "solid" "white")))
                (circle 0 "solid" "white"))))
 
-
 (define (dot-grid w h)
   (cond
     [(zero? h) (circle 0 "solid" "white")]
     [else
      (above (render-dot-row w) (dot-grid w (sub1 h)))]))
-
 
 ;; render-dot-row : Natural -> Image
 ;; Given a natural, produces row of dots of that size

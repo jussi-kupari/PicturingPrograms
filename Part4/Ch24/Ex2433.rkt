@@ -19,7 +19,6 @@ and n, computes m to-the-power-of n.|#
     [(zero? n) m]
     [else (wn-add (add1 m) (sub1 n))]))
 
-
 ;; wn-mult : Natural Natural -> Natural
 ;; Given two natural numbers, produces their product
 (check-expect (wn-mult 0  0)  0)
@@ -40,7 +39,6 @@ and n, computes m to-the-power-of n.|#
     [(or (zero? m) (zero? n)) 0]
     [else (wn-add m (wn-mult m (sub1 n)))]))
 
-
 ;; wn-raise : Natural Natural -> Natural
 ;; Given two naturals, raises the first to the power of the second
 (check-expect (wn-raise   0 0)     1)
@@ -59,22 +57,3 @@ and n, computes m to-the-power-of n.|#
   (cond
     [(or (zero? n) (= 1 m)) 1]
     [else (wn-mult m (wn-raise m (sub1 n)))]))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -8,7 +8,6 @@ how-many and limit and produces a list of how-many numbers, each chosen randomly
 
 Hint: Use the template on how-many, not on limit.|#
 
-
 ;; randoms : Natural Natural -> List-Of-Numbers
 ;; produces a list of natural numbers length of first number with random numbers
 ;; between 0 and the second number

@@ -17,7 +17,6 @@ their sum, as a frac.|#
        (frac-denominator f)))   
 |#
 
-
 ;; frac-add : Frac Frac -> Frac
 ;; Given two fractions, produces their addition
 (check-expect (frac-add (make-frac 1 3) (make-frac 1 6)) (make-frac  1  2))
@@ -30,7 +29,6 @@ their sum, as a frac.|#
     (wn-add (wn-mult (frac-numerator f1) (frac-denominator f2))
             (wn-mult (frac-numerator f2) (frac-denominator f1)))
     (wn-mult (frac-denominator f1) (frac-denominator f2)))))
-
 
 ;; reduce-frac : Frac -> Frac
 ;; Given a fraction, simplifies it to the fullest
@@ -60,7 +58,6 @@ their sum, as a frac.|#
                 (wn-quotient (frac-denominator f) n))]
     [else (reduce-with-numbers f (sub1 n))]))  
 
-
 ;; wn-quotient : Natural Natural -> Natural
 ;; Given two naturals, produces the quotient of dividing the first with the second.
 (check-error (wn-quotient 0 0) "You can't divide with a zero.")
@@ -80,7 +77,6 @@ their sum, as a frac.|#
     [(or (zero? m) (< m n)) 0]
     [else (add1 (wn-quotient (wn-sub m n) n))]))
 
-
 ;; wn-remainder : Natural Natural -> Natural
 ;; Given two naturals, produces the remainder of dividing the first with the second.
 (check-error (wn-remainder 0 0) "You can't divide with a zero.")
@@ -98,7 +94,6 @@ their sum, as a frac.|#
     [(equal? m n) 0]
     [(< m n) m]
     [else (wn-remainder (wn-sub m n) n)]))
-
 
 ;; wn-sub : Natural Natural -> Integer
 ;; Given two naturals, produces their difference
@@ -127,7 +122,6 @@ their sum, as a frac.|#
   (cond
     [(zero? n) m]
     [else (wn-add (add1 m) (sub1 n))]))
-
 
 ;; wn-mult : Natural Natural -> Natural
 ;; Given two natural numbers, produces their product

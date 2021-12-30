@@ -13,7 +13,6 @@ order, and y coordinates from the corresponding elements of the second list.|#
 ;; - (cons number LON)
 ;; interp. LON is a list of numbers
 
-
 ;; -- Functions
 
 ;; make-posns : LON LON -> List-of-Posns

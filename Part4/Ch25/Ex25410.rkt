@@ -9,7 +9,6 @@ functions).
 Note: Somebody had to do this, not in Racket but in wires and transistors, in order
 for your computer to be able to multiply.|#
 
-
 ;; -- Functions
 
 (define (ZER0 x) (* x 2))
@@ -46,7 +45,6 @@ for your computer to be able to multiply.|#
     [(zero? n) m]
     [(zero? m) n]
     [else (binary-add (binary-add1 m) (binary-sub1 n))]))
-
 
 ;; binary-add1 : Natural -> Natural
 ;; Given a Natural, produces the next larger Natural

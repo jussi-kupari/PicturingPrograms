@@ -6,7 +6,6 @@ Develop a function count-up-to that takes in two whole numbers
 low and high and produces a list of the numbers low, low+1, . . . high. If low > high,
 it should return an empty list.|#
 
-
 ;; count-up-to : Natural Natural -> LONa
 ;; Given two Naturals, produces a list of the numbers (inc.) in between in low->high order
 (check-expect (count-up-to 5 4) empty)

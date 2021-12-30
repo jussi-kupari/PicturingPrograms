@@ -29,7 +29,6 @@ for your computer to be able to add.|#
     [(zero? m) n]
     [else (binary-add (binary-add1 m) (binary-sub1 n))]))
 
-
 ;; binary-add1 : Natural -> Natural
 ;; Given a Natural, produces the next larger Natural
 (check-expect (binary-add1 0)   1)

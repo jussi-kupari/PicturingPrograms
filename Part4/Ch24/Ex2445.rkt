@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname Ex2445_UNFINISHED) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #t)))
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname Ex2445) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #t)))
 #|Worked Exercise 24.4.5
 Re-write the spams function to take in an ordinary whole
 number, using the binary template.|#
@@ -21,8 +21,6 @@ Template (rbw is "real binary whole")
         [(odd? n) ...]))
 |#
 
-
-
 ;; -- Functions
 
 (define (half x) (quotient x 2))
@@ -34,7 +32,6 @@ Template (rbw is "real binary whole")
 (check-expect (binary-spams 3) (cons "spam" (cons "spam" (cons "spam" empty))))
 (check-expect (binary-spams 6) (list "spam" "spam" "spam" "spam" "spam" "spam"))
 (check-expect (binary-spams 7) (list "spam" "spam" "spam" "spam" "spam" "spam" "spam"))
-
 
 (define (binary-spams n)
   (cond [(zero? n) empty]

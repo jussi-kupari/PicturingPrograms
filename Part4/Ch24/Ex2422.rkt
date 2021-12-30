@@ -6,8 +6,8 @@ Develop a function count-down-to that takes in two whole numbers low and high an
 produces a list of the numbers high, high-1, . . . low in that order. If low > high,
 it should return an empty list. What if we wanted the list in increasing order?
 Rather than treating high as a “whole number ≥ low”, and calling the function recursively
-on (sub1 high), we instead treat low as a “whole number ≤ high”, and calling the function recursively on (add1 low).|#
-
+on (sub1 high), we instead treat low as a “whole number ≤ high”, and calling the
+function recursively on (add1 low).|#
 
 ;; -- Functions
 
@@ -22,5 +22,3 @@ on (sub1 high), we instead treat low as a “whole number ≤ high”, and calli
     [(> l h) empty]
     [else
      (cons h (count-down-to l (sub1 h)))]))
-
-

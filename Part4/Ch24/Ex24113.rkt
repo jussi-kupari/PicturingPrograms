@@ -24,7 +24,6 @@ do that in the next section.|#
 ;; - (cons Posn LOPosn)
 ;; interp. a list of Posns
 
-
 ;; -- Functions
 
 ;; table-of-squares : Natural -> LOPosn

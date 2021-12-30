@@ -21,7 +21,6 @@ of the amounts each employee should be paid, in the same order.|#
     [else
      ... (fi-for-lon (rest lon))]))|#
 
-
 ;; pay-list : LON LON -> LON
 ;; Given a list of hours and a list of wages, produces a list of due payments for each employee.
 ;; ASSUME the two lists are of equal length

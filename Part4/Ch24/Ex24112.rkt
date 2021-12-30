@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex2412) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex24112) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 #|Exercise 24.1.12
 Develop a function named random-posns that takes in three whole
 numbers how-many, max-x, and max-y and produces a list of how-many posns, each with
@@ -12,7 +12,6 @@ x chosen randomly between 0 and max-x, and y chosen randomly between 0 and max-y
 ;; -empty
 ;; - (cons Posn LOPosn)
 ;; interp. a list of Posns
-
 
 ;; random-posns : Natural Natural Natural -> LOPosn
 ;; produces a list of how-many posns, each with x chosen randomly between 0 and max-x,

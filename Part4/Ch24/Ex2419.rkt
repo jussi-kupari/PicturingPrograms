@@ -47,4 +47,3 @@ fix this problem in Section 30.3.
     [else
      (+ (fibonacci (- n 1))
         (fibonacci (- n 2)))]))
-

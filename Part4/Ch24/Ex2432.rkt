@@ -21,7 +21,6 @@ from these operators.|#
     [(zero? n) m]
     [else (wn-add (add1 m) (sub1 n))]))
 
-
 ;; wn-mult : Natural Natural -> Natural
 ;; Given two natural numbers, produces their product
 (check-expect (wn-mult 0  0)  0)
@@ -41,5 +40,3 @@ from these operators.|#
   (cond
     [(or (zero? m) (zero? n)) 0]
     [else (wn-add m (wn-mult m (sub1 n)))]))
-
-

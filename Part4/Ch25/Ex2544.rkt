@@ -14,7 +14,6 @@ You will probably need a helper function.
 
 Note: This solution seems like a dirty hack.|#
 
-
 ;; -- Data Definition
 
 ;; List-of-Strings (LOS) is one of:
@@ -39,7 +38,6 @@ Note: This solution seems like a dirty hack.|#
 
 (define (label-names-2 los)
   (label-names-with-index los 1)) ;This hard-coded 1 bothers me
-
 
 ;; label-names-with-index : LOS Natural -> List-of-Lists
 ;; Given a LOS and a starting index, produces a list of two element lists composed of

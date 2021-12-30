@@ -84,14 +84,9 @@ Re-write the spams function to take in a built-binary-whole.|#
 (check-expect (spams (0NE (0NE (0NE 0))))
               (list "spam" "spam" "spam" "spam" "spam" "spam" "spam"))
 
-
 (define (spams n)
   (cond [(equal? n 0) empty]
         [(zer0? n)
          (append (spams (zer0-half n)) (spams (zer0-half n)))]
         [(0ne? n)
          (cons "spam" (append (spams (0ne-half n)) (spams (0ne-half n))))]))
-
-
-
-

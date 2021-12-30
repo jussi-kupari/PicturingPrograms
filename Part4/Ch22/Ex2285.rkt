@@ -13,13 +13,9 @@ depth of 1, a list that contains some lists of strings has a nesting depth of 2,
 ;; - (cons String NSL)
 ;; - (cons LOS NSL)
 
-
-
 ;; LOS is one of:
 ;; - empty
 ;; - (cons String LOS)
-
-
 
 #|Template for NSL
 (define (fn-for-nsl nsl)
@@ -75,8 +71,6 @@ depth of 1, a list that contains some lists of strings has a nesting depth of 2,
                                    "three"
                                    empty)))) 3)
 
-
-
 (define (max-nesting-depth nsl)
   (cond
     [(empty? nsl) 0]
@@ -85,7 +79,3 @@ depth of 1, a list that contains some lists of strings has a nesting depth of 2,
     [else
      (+ 1 (max (max-nesting-depth (first nsl))
                (max-nesting-depth (rest nsl))))]))
-
-
-
-

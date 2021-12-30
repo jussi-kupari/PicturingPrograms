@@ -32,7 +32,6 @@ just as we’ve defined wholes, addition, multiplication, and so on.|#
     [(<= n 1) false]
     [else (not-divisible-up-to? n (sub1 n))]))
 
-
 ;; not-divisible-up-to? : Natural Natural -> Boolean
 ;; Given two naturals, produces true if first is not divisible with any natural up to the second
 (check-expect (not-divisible-up-to? 2 1) true)
@@ -44,7 +43,6 @@ just as we’ve defined wholes, addition, multiplication, and so on.|#
     [(equal? n 1) true]
     [(zero? (wn-remainder m n)) false]
     [else (not-divisible-up-to? m (sub1 n))]))
-
 
 ;; wn-remainder : Natural Natural -> Natural
 ;; Given two naturals, produces the remainder of dividing the first with the second.
@@ -63,7 +61,6 @@ just as we’ve defined wholes, addition, multiplication, and so on.|#
     [(equal? m n) 0]
     [(< m n) m]
     [else (wn-remainder (wn-sub m n) n)]))
-
 
 ;; wn-sub : Natural Natural -> Integer
 ;; Given two naturals, produces their difference

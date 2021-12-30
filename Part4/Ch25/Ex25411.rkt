@@ -29,7 +29,6 @@ These are horribly inefficient!!|#
     [(zero? n) 1]
     [else (binary-mult m (binary-raise m (binary-sub1 n)))]))
 
-
 ;; binary-mult : Natural Natural -> Natural
 ;; Given two naturals, produces their product using the binary template
 (check-expect (binary-mult  0  0)   0)
@@ -60,7 +59,6 @@ These are horribly inefficient!!|#
     [(zero? n) m]
     [(zero? m) n]
     [else (binary-add (binary-add1 m) (binary-sub1 n))]))
-
 
 ;; binary-add1 : Natural -> Natural
 ;; Given a Natural, produces the next larger Natural

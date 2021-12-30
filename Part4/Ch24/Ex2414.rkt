@@ -16,7 +16,6 @@ returns a list with that many copies of the string "spam".|#
 ;; (cons String LOS)
 ;; interp. a list of strings
 
-
 ;; -- Functions
 
 ;; copies : String Natural -> LOS

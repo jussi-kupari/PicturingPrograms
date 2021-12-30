@@ -8,7 +8,6 @@ and returns the (ordinary) whole number that it represents. For example,
 (check-expect (binary-whole-value (0NE 0)) 1)
 (check-expect (binary-whole-value (ZER0 (0NE (0NE (ZER0 (0NE 0)))))) 22)
 
-
 Some help from Wikipedia
 (https://en.wikipedia.org/wiki/Binary_number)
 In the binary system, each digit represents an increasing power of 2,
@@ -117,9 +116,3 @@ For example, the binary number 100101 is converted to decimal form as follows:
              (+ (* 0 (expt 2 n)) (get-sum-of-two-to-powers (zer0-half bbw) (add1 n)))]
             [(0ne? bbw)
              (+ (* 1 (expt 2 n)) (get-sum-of-two-to-powers (0ne-half bbw) (add1 n)))])]))
-
-
-
-
-
-

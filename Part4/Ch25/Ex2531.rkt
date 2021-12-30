@@ -16,7 +16,6 @@ should produce an appropriate error message.|#
 ;; - (cons element NEL)
 ;; interp. a non-empty list of anything
 
-
 ;; pick-element : Natural NEL -> element
 ;; Given a Natural[0, ] and a non-empty list, produces the element specified by the Natural.
 (check-error  (pick-element  1 empty) "pick-element: given list is empty")
@@ -33,7 +32,6 @@ should produce an appropriate error message.|#
 (check-error  (pick-element -1 (list "a")) "pick-element: no such element")
 (check-expect (pick-element  4 (list "a" "b" "c" "d" "e")) "e")
 (check-expect (pick-element  4 (list "a" "b" "c" "d" "e" "f" "g")) "e")
-
 
 (define (pick-element n nel)
   (cond

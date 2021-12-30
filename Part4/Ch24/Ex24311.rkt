@@ -30,7 +30,6 @@ denominator.|#
 (define (reduce-frac f)
   (reduce-with-numbers f 1000))
 
-
 ;; reduce-with-numbers : Frac Natural -> Frac
 ;; Given a fraction and a natural to start form, returns the most simple fraction
 (check-expect (reduce-with-numbers (make-frac   1    1) 1000) (make-frac   1    1))
@@ -45,7 +44,6 @@ denominator.|#
      (make-frac (wn-quotient (frac-numerator f) n)
                 (wn-quotient (frac-denominator f) n))]
     [else (reduce-with-numbers f (sub1 n))]))  
-
 
 ;; wn-quotient : Natural Natural -> Natural
 ;; Given two naturals, produces the quotient of dividing the first with the second.
@@ -66,7 +64,6 @@ denominator.|#
     [(or (zero? m) (< m n)) 0]
     [else (add1 (wn-quotient (wn-sub m n) n))]))
 
-
 ;; wn-remainder : Natural Natural -> Natural
 ;; Given two naturals, produces the remainder of dividing the first with the second.
 (check-error (wn-remainder 0 0) "You can't divide with a zero.")
@@ -84,7 +81,6 @@ denominator.|#
     [(equal? m n) 0]
     [(< m n) m]
     [else (wn-remainder (wn-sub m n) n)]))
-
 
 ;; wn-sub : Natural Natural -> Integer
 ;; Given two naturals, produces their difference

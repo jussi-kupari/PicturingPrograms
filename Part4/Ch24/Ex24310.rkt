@@ -35,7 +35,6 @@ Cross-products of two equal fractions should produce equal numbers.
   (equal? (wn-mult (frac-numerator f1) (frac-denominator f2))
           (wn-mult (frac-numerator f2) (frac-denominator f1))))
 
-
 ;; wn-mult : Natural Natural -> Natural
 ;; Given two natural numbers, produces their product
 (check-expect (wn-mult 0  0)  0)
@@ -55,7 +54,6 @@ Cross-products of two equal fractions should produce equal numbers.
   (cond
     [(or (zero? m) (zero? n)) 0]
     [else (wn-add m (wn-mult m (sub1 n)))]))
-
 
 ;; wn-add : Natural Natural -> Natural
 ;; Given two naural numbers, produces their sum

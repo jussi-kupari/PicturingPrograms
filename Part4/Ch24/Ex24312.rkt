@@ -17,7 +17,6 @@ their product, as a frac.|#
        (frac-denominator f)))   
 |#
 
-
 ;; frac-mult : Frac Frac -> Frac
 ;; Given two fractions, produces their product (in the simplest from)
 (check-expect (frac-mult (make-frac 2 4) (make-frac 2 4)) (make-frac 1 4))
@@ -30,7 +29,6 @@ their product, as a frac.|#
               (wn-mult (frac-denominator f1)
                        (frac-denominator f2)))))
 
-
 ;; reduce-frac : Frac -> Frac
 ;; Given a fraction, simplifies it to the fullest
 (check-expect (reduce-frac (make-frac 1  1)) (make-frac 1 1))
@@ -42,7 +40,6 @@ their product, as a frac.|#
 
 (define (reduce-frac f)
   (reduce-with-numbers f 1000))
-
 
 ;; reduce-with-numbers : Frac Natural -> Frac
 ;; Given a fraction and a natural to start form, returns the most simple fraction
@@ -58,7 +55,6 @@ their product, as a frac.|#
      (make-frac (wn-quotient (frac-numerator f) n)
                 (wn-quotient (frac-denominator f) n))]
     [else (reduce-with-numbers f (sub1 n))]))  
-
 
 ;; wn-quotient : Natural Natural -> Natural
 ;; Given two naturals, produces the quotient of dividing the first with the second.
@@ -79,7 +75,6 @@ their product, as a frac.|#
     [(or (zero? m) (< m n)) 0]
     [else (add1 (wn-quotient (wn-sub m n) n))]))
 
-
 ;; wn-remainder : Natural Natural -> Natural
 ;; Given two naturals, produces the remainder of dividing the first with the second.
 (check-error (wn-remainder 0 0) "You can't divide with a zero.")
@@ -97,7 +92,6 @@ their product, as a frac.|#
     [(equal? m n) 0]
     [(< m n) m]
     [else (wn-remainder (wn-sub m n) n)]))
-
 
 ;; wn-mult : Natural Natural -> Natural
 ;; Given two natural numbers, produces their product
@@ -119,7 +113,6 @@ their product, as a frac.|#
     [(or (zero? m) (zero? n)) 0]
     [else (wn-add m (wn-mult m (sub1 n)))]))
 
-
 ;; wn-sub : Natural Natural -> Integer
 ;; Given two naturals, produces their difference
 (check-expect (wn-sub  0  0)   0)
@@ -133,7 +126,6 @@ their product, as a frac.|#
   (cond
     [(zero? n) m]
     [else (wn-sub (sub1 m) (sub1 n))]))    
-
 
 ;; wn-add : Natural Natural -> Natural
 ;; Given two naural numbers, produces their sum
