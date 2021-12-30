@@ -7,11 +7,9 @@
 ; "chop-first-char: can’t chop from an empty string"
 ; and never returns.
 
-
 ; Exercise 9.2.3 Develop a function chop-first-char that takes in a string and re-
-; turns all but the first character. (For now, you may assume the string is non-empty; we’ll
-; drop this assumption later.)
-
+; turns all but the first character.
+; (For now, you may assume the string is non-empty; we’ll drop this assumption later.)
 
 ;; chop-first-char : String -> String
 ;; Given a non-empty string, produces the string without the first character
@@ -20,7 +18,6 @@
 (define (chop-first-char s)
   (substring s 1))
 
-
 ;; chop-first-char.v2 : String -> String
 ;; Given a string, produces the string without the first character or a nice error
 (check-expect (chop-first-char.v2 "jussi") "ussi") 
@@ -28,5 +25,5 @@
 
 (define (chop-first-char.v2 s)
   (cond
-    [(= (string-length s) 0) (error "chop-first-char.v2: can’t chop from an empty string")]
+    [(= (string-length s) 0) (error 'chop-first-char.v2 "can’t chop from an empty string")]
     [else (substring s 1)]))

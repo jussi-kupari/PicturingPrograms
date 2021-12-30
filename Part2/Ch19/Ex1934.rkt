@@ -18,35 +18,29 @@
 ; you were given into your error message. This can be done using
 ; string-append, or using the format function, which I haven’t told
 ; you about yet. If you wish, look it up and rewrite the function that way.
-
 (require picturing-programs)
 
 ;; safe-double : Number|String|Boolean|Image -> Number|error
 ;; Given number, string, boolean or image
 ;; produces 2x number if the input is a number, else an error
-(check-expect
- (safe-double 2)
- 4)
-(check-error
- (safe-double "abc")
+(check-expect (safe-double 2) 4)
+(check-error (safe-double "abc")
  "safe-double: This function expects a number, like 3. You gave it a string.")
-(check-error
- (safe-double false)
+(check-error (safe-double false)
  "safe-double: This function expects a number, like 3. You gave it a boolean.")
-(check-error
- (safe-double (circle 10 "solid" "black"))
+(check-error (safe-double (circle 10 "solid" "black"))
  "safe-double: This function expects a number, like 3. You gave it an image.")
                                                                                 
-
 ;; safe-double
 (define (safe-double i)
   (cond
     [(number? i) (* i 2)]
     [(string? i)
-     (error "safe-double: This function expects a number, like 3. You gave it a string.")]
+     (error 'safe-double
+            "This function expects a number, like 3. You gave it a string.")]
     [(boolean? i)
-     (error "safe-double: This function expects a number, like 3. You gave it a boolean.")]
+     (error 'safe-double
+            "This function expects a number, like 3. You gave it a boolean.")]
     [(image? i)
-     (error "safe-double: This function expects a number, like 3. You gave it an image.")]))
-
-                                                                                                      
+     (error 'safe-double
+            "This function expects a number, like 3. You gave it an image.")]))                                                                            

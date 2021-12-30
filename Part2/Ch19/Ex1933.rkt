@@ -7,12 +7,9 @@
 ; "first-char: can’t get first character of an empty string"
 ; and never returns.
 
-
-
 ; Exercise 9.2.4 Develop a function first-char that takes in a string and returns a
-; string of length 1, containing just the first character of the given string. (For now, you
-; may assume the string is non-empty; we’ll drop this assumption later.)
-
+; string of length 1, containing just the first character of the given string.
+;(For now, you  may assume the string is non-empty; we’ll drop this assumption later.)
 
 ;; first-char : String -> String
 ;; Given a string, produces the first character of the string
@@ -31,5 +28,5 @@
 (define (first-char.v2 s)
   (cond
     [(= (string-length s) 0)
-     (error "first-char: can’t get first character of an empty string")]
+     (error 'first-char "can’t get first character of an empty string")]
     [else (substring s 0 1)]))

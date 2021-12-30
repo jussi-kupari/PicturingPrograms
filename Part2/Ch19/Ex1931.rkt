@@ -6,8 +6,6 @@
 ; any of the known strings, it produces an error message and never returns, rather than
 ; returning "huh?".
 
-
-
 ;; String -> String
 ;; Given one of the strings: "good morning", "good afternoon", or "good night"
 ;; produces either: "I need coffee", "I need a nap", "bedtime!" or an error message
@@ -20,4 +18,4 @@
   (cond[(string=? "good morning" s) "I need coffee"]
        [(string=? "good afternoon" s) "I need a nap"]
        [(string=? "good night" s) "bedtime!"]
-       [else (error "reply: no answer available for this greeting")]))  
+       [else (error 'reply "no answer available for this greeting")])) 
