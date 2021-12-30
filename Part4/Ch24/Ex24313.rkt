@@ -42,7 +42,6 @@ their sum, as a frac.|#
 (define (reduce-frac f)
   (reduce-with-numbers f 1000)) ;This hard coded parameter is a hack
 
-
 ;; reduce-with-numbers : Frac Natural -> Frac
 ;; Given a fraction and a natural to start form, returns the most simple fraction
 (check-expect (reduce-with-numbers (make-frac   1    1) 1000) (make-frac   1    1))
