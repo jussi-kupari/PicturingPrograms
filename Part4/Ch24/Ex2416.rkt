@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname |Ex 2416|) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex2416) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 #|Exercise 24.1.6
 Develop a function count-down that takes in an (ordinary) whole
 number and produces a list of the whole numbers from it down to 0. For example,
@@ -12,7 +12,6 @@ number and produces a list of the whole numbers from it down to 0. For example,
 ;; - 0
 ;; (add1 Natural LONa)
 ;; interp. a list of Natural numbers
-
 
 ;; -- Functions
 

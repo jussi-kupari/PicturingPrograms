@@ -16,7 +16,6 @@ and produces a list of that many copies of the string.|#
 ;; (cons String LOS)
 ;; interp. a list of strings
 
-
 ;; -- Functions
 
 ;; copies : String Natural -> LOS

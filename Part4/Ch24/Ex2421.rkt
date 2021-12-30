@@ -6,7 +6,6 @@ Develop a function add-up-from-10 that takes in a whole number n ≥ 10 and retu
 the sum 10 + 11 + . . . + n. Generalize this to a function add-up-between that takes
 in two whole numbers m and n and returns the sum m + (m + 1) + . . . + n.|#
 
-
 ;; add-up-from-10 : Natural -> Natural
 ;; Given a Natural[10, ], produces the sum of all Naturals up from 10 to specified number
 
@@ -21,7 +20,6 @@ in two whole numbers m and n and returns the sum m + (m + 1) + . . . + n.|#
     [(= n 10) n]
     [else
      (+ n (add-up-from-10 (sub1 n)))]))
-
 
 ;; add-up-between : Natural Natural -> Natural
 ;; Given two Naturals, produces the sum of naturals between them (inclusive)
