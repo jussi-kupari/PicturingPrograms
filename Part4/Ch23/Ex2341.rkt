@@ -30,7 +30,6 @@ Note: I made mine to respond to "dragging" (= moving with button down) not click
 ;Ball
 (define BALL (circle 10 "solid" "red"))
 
-
 ;; -- Data Definitions
 
 (define-struct ball (x y velx vely))
@@ -49,7 +48,6 @@ Note: I made mine to respond to "dragging" (= moving with button down) not click
 (define LOB1 (cons (make-ball 50 50 -10 -5)
                    (cons (make-ball 70 50 -5 5)
                          (cons (make-ball 100 40 10 5) empty))))
-
 
 ;; -- Functions
 
@@ -70,7 +68,6 @@ Note: I made mine to respond to "dragging" (= moving with button down) not click
 (check-expect (next-lob (cons (make-ball (add1 WIDTH) 50 10 10) empty))
               (cons (make-ball WIDTH 50 -10 10) empty))
 
-
 (define (next-lob lob)
   (cond
     [(empty? lob) empty]
@@ -79,7 +76,6 @@ Note: I made mine to respond to "dragging" (= moving with button down) not click
                (next-ball (first lob))
                (bounce (first lob)))
            (next-lob (rest lob)))]))
-
 
 ;; next-ball : Ball -> Ball
 ;; Given a Ball, produces the ball with updated location
@@ -103,14 +99,12 @@ Note: I made mine to respond to "dragging" (= moving with button down) not click
   (and (<= 0 (ball-x b) WIDTH)
        (<= 0 (ball-y b) HEIGHT)))
 
-
 ;; bounce : Ball -> Ball
 ;; Given a Ball, reverses the velocity of the dimension that is beyond limits of the scene
 (check-expect (bounce (make-ball WIDTH 100 10 10)) (make-ball WIDTH 100 10 10))
 (check-expect (bounce (make-ball (+ WIDTH 1) 100 10 10)) (make-ball WIDTH 100 -10 10))
 (check-expect (bounce (make-ball -1 100 -10 10)) (make-ball 0 100 10 10))
 (check-expect (bounce (make-ball 0 100 -10 10)) (make-ball 0 100 -10 10))
-
 
 (define (bounce b)
   (cond
@@ -123,7 +117,6 @@ Note: I made mine to respond to "dragging" (= moving with button down) not click
     [(< (ball-y b) 0)
      (make-ball (ball-x b) 0 (ball-velx b) (* (ball-vely b) -1))]
     [else b]))
-
 
 ;; modify-lob : LOB KeyEvent -> LOB
 ;; Given a LOB and a key-event ("+" or "-") adds or removes a ball from the list end of the LOB
@@ -150,7 +143,6 @@ Note: I made mine to respond to "dragging" (= moving with button down) not click
                      (cons (make-ball 70 80 -4 7) empty)))
               (place-image BALL 70 80 (place-image BALL 50 50 SCENE)))
 
-
 (define (render-lob lob)
   (cond
     [(empty? lob) SCENE]
@@ -158,9 +150,8 @@ Note: I made mine to respond to "dragging" (= moving with button down) not click
      (place-image BALL (ball-x (first lob)) (ball-y (first lob))
                   (render-lob (rest lob)))]))
 
-
 ;; remove-if-hit : LOB Number Number MouseEvent -> LOB
-;; Given a LOB, mouse xy and a mouse-event, if the cursor hits the ball, removes the ball from the list
+;; Given a LOB, mouse xy and a mouse-ev, if the cursor hits the ball, removes the ball from the list
 (check-expect (remove-if-hit (cons
                               (make-ball 50 50 0 0) empty) 10 10 "move")
               (cons
@@ -178,7 +169,6 @@ Note: I made mine to respond to "dragging" (= moving with button down) not click
      (if (hit? (first lob) x y me)
          (remove-if-hit (rest lob) x y me)
          (cons (first lob) (remove-if-hit (rest lob) x y me)))]))
-
 
 ;; hit? : Ball Number Number MouseEvent -> LOB
 ;; Given a Ball, mouse xy and a mouse-event, produces true if the cursor hits the ball
@@ -198,8 +188,3 @@ Note: I made mine to respond to "dragging" (= moving with button down) not click
 
 (define (no-balls? lob)
   (empty? lob))
-
-
-
-
-

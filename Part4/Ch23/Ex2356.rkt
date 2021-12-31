@@ -17,7 +17,6 @@ For example,
 ;; (cons String LOS)
 ;; interp. a list of strings
 
-
 ;; -- Functions
 
 ;; words : String -> LOS
@@ -38,7 +37,6 @@ For example,
          (words (substring s 1))
          (cons (substring s 0 (count-consecutive-alphabets s))
                (words (substring s (count-consecutive-alphabets s)))))]))
-
 
 ;; count-consecutive-alphabets : String -> Natural
 ;; Given an string, produces the number of consecutive alphabets from the start of the string

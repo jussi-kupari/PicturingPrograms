@@ -6,25 +6,21 @@
 ; (from Exercise 21.2.1) and returns a list containing only their salaries, in the same
 ; order.
 
-
 ;; -- Data Definitions
 
 (define-struct employee (name id salary))
 ;; Empoyee is (make-employee String Natural Number)
 ;; interp. Employee information with name, ID-number and salary
 
-
 ;; LOE (List-Of-Employees) is one of:
 ;; - empty
 ;; - (cons Employee LOE)
 ;; interp. a list of employees
 
-
 ;; LOS (List-of-numbers) is one of:
 ;; - empty
 ;; - (cons Number LON)
 ;; interp. a list of numbers
-
 
 ;; -- Functions
 

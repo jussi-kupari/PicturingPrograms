@@ -2,10 +2,9 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex2327) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ; Exercise 23.2.7
-; Develop a function tally-votes that takes in a list of strings (Voter1’s favorite candidate, Voter 2’s favorite candidate, etc.)
-; and produces a list of candidate structures in which each candidate’s name appears once, with how many votes were cast
-; for that candidate.
-
+; Develop a function tally-votes that takes in a list of strings (Voter1’s favorite candidate,
+; Voter 2’s favorite candidate, etc.) and produces a list of candidate structures in which each
+; candidate’s name appears once, with how many votes were cast for that candidate.
 
 ;; -- Data Definitions
 
@@ -22,7 +21,6 @@
 ;; - empty
 ;; - (cons candidate LOC)
 
-
 ;; -- Functions
 
 ;; tally-votes : LOS -> LOC
@@ -33,9 +31,11 @@
  (tally-votes (cons "Amy" (cons "John" (cons "Amy" empty))))
  (cons (make-candidate "Amy" 2) (cons (make-candidate "John" 1) empty)))
 (check-expect
- (tally-votes (cons "Amy" (cons "Amy" (cons "John" (cons "Matt" (cons "John" (cons "Amy" empty)))))))
- (cons (make-candidate "Amy" 3) (cons (make-candidate "John" 2) (cons (make-candidate "Matt" 1) empty))))
-
+ (tally-votes
+  (cons "Amy" (cons "Amy" (cons "John" (cons "Matt" (cons "John" (cons "Amy" empty)))))))
+ (cons (make-candidate "Amy" 3)
+       (cons (make-candidate "John" 2)
+             (cons (make-candidate "Matt" 1) empty))))
 
 (define (tally-votes los)
   (cond
@@ -44,7 +44,6 @@
                  (first los)
                  (add1 (count-name (first los) (rest los))))
                 (tally-votes (remove-name (first los) (rest los))))]))
-
 
 ;; count-name : String LOS -> Natural
 ;; Given a String (name of candidate) and a LOS, produces the count of the name in the list

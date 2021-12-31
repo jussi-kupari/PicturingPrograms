@@ -25,7 +25,6 @@ empty)))))|#
 ;; - empty
 ;; - (cons LOO LOLOO)
 
-
 ;; -- Functions
 
 ;; suffixes : LOO -> LOLOO
@@ -38,7 +37,6 @@ empty)))))|#
                           (cons (cons "c" empty)
                                 (cons empty
                                       empty)))))
-
 
 (define (suffixes loo)
   (cond

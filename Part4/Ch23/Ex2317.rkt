@@ -9,8 +9,6 @@
 ; (check-expect (list-each (cons "a" (cons "b" empty)))
 ; (cons (cons "a" empty) (cons (cons "b" empty) empty)))
 
-
-
 ;; -- Data Definitions
 
 ;; LOO (List-Of-Objects) is one of:

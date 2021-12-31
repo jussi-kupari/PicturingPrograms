@@ -14,7 +14,6 @@ For example, if you made both this modification and the one in exercise 23.5.8,
 Hint: To do this, you may need some of the built-in functions char-upper-case?,
 char-lower-case?, char-upcase, and char-downcase. Look them up in the Help Desk.|#
 
-
 ;; pig-latin: String -> String
 ;; Given a string, converts it to "Pig Latin"
 ;; - if it starts with vowel, add “way” at the end of the word
@@ -54,7 +53,6 @@ char-lower-case?, char-upcase, and char-downcase. Look them up in the Help Desk.
          " "
          (pig-latin (substring s 1)))])]))
 
-
 ;; extract-word : String -> String
 ;; Given a string, extract substring to the first space
 (check-expect (extract-word "this is a line.") "this")
@@ -68,7 +66,6 @@ char-lower-case?, char-upcase, and char-downcase. Look them up in the Help Desk.
      (string-append
       (string-ith s 0)
       (extract-word (substring s 1)))]))
-
 
 ;; add-ay : String -> String
 ;; Given a String, place all starting consonants to the end and add "ay" to the end
@@ -93,14 +90,12 @@ char-lower-case?, char-upcase, and char-downcase. Look them up in the Help Desk.
     [(vowel? (string-ith s 0)) 0]
     [else (add1 (count-consecutive-consonants (substring s 1)))]))
 
-
 ;; add-way : String -> String
 ;; Given a String, add "way" at the end of the string
 (check-expect (add-way "asteroid") "asteroidway")
 
 (define (add-way s)
   (string-append s "way"))
-
 
 ;; vowel? : 1String -> Boolean
 ;; Given a string (length of one), produces true if it is a vowel.
@@ -158,7 +153,6 @@ char-lower-case?, char-upcase, and char-downcase. Look them up in the Help Desk.
   (string-append
    (string-downcase (string-ith s 0))
    (substring s 1)))
-
 
 ;; starts-with-capital? : String -> Boolean
 ;; Given a string, produces true if the string starts with a capital letter

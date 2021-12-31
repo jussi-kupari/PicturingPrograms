@@ -12,9 +12,8 @@ For example,
 You may assume for simplicity that all the letters are lower-case. You may find it
 useful to write a vowel? helper function.|#
 
-
 ;; ubby-dubby : String -> String
-;; Given a string, produces the string with "ubb" placed in front of each vowel in the original stirng.
+;; Given a string, produces the string with "ubb" placed in the front
 (check-expect (ubby-dubby "abc") "ubbabc")
 
 (define (ubby-dubby s)

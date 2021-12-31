@@ -5,7 +5,6 @@
 ; Develop a function string-lengths that takes in a list of strings
 ; and returns a list of their (numeric) lengths, in the same order.
 
-
 ;; -- Data Definition
 
 ;; LOS (List-Of-String) is one of:
@@ -13,15 +12,16 @@
 ;; - (cons String LOS)
 ;; interp. a list of strings
 
-
 ;; -- Functions
 
 ;; string-lengths : LOS -> LOS
 ;; Given a list-of-strings, produces a corresponding list of string lengths
 (check-expect (string-lengths empty) empty)
 (check-expect (string-lengths (cons "a" empty)) (cons 1 empty))
-(check-expect (string-lengths (cons "a" (cons "ab" empty))) (cons 1 (cons 2 empty)))
-(check-expect (string-lengths (cons "a" (cons "ab" (cons "abcde" empty)))) (cons 1 (cons 2 (cons 5 empty))))
+(check-expect (string-lengths (cons "a" (cons "ab" empty)))
+              (cons 1 (cons 2 empty)))
+(check-expect (string-lengths (cons "a" (cons "ab" (cons "abcde" empty))))
+              (cons 1 (cons 2 (cons 5 empty))))
 
 (define (string-lengths los)
   (cond

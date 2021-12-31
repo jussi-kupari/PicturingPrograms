@@ -28,7 +28,6 @@ Hint: See Exercise 22.7.4.|#
           (string-append "ubb" (substring s 0 (count-consecutive-vowels s)))
           (ubby-dubby.v2 (substring s (count-consecutive-vowels s)))))]))
 
-
 ;; count-consecutive-vowels : String -> Natural
 ;; Given an string, produces the number of consecutive vowels from the start of the string
 (check-expect (count-consecutive-vowels "") 0)
@@ -44,7 +43,6 @@ Hint: See Exercise 22.7.4.|#
      (if (vowel? (string-ith s 0))
          (+ 1 (count-consecutive-vowels (substring s 1)))
          0)]))
-
 
 ;; vowel? : 1String -> Boolean
 ;; Given a string (length of one), produces true if it is a vowel.

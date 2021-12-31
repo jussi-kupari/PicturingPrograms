@@ -36,7 +36,6 @@ For example,
          " "
          (pig-latin (substring s 1)))])]))
 
-
 ;; extract-word : String -> String
 ;; Given a string, extrat substring to the first space
 (check-expect (extract-word "this is a line.") "this")
@@ -50,7 +49,6 @@ For example,
      (string-append
       (string-ith s 0)
       (extract-word (substring s 1)))]))
-
 
 ;; add-ay : String -> String
 ;; Given a String, place all starting consonants to the end and add "ay" to the end
@@ -75,14 +73,12 @@ For example,
     [(vowel? (string-ith s 0)) 0]
     [else (add1 (count-consecutive-consonants (substring s 1)))]))
 
-
 ;; add-way : String -> String
 ;; Given a String, add "way" at the end of the string
 (check-expect (add-way "asteroid") "asteroidway")
 
 (define (add-way s)
   (string-append s "way"))
-
 
 ;; vowel? : 1String -> Boolean
 ;; Given a string (length of one), produces true if it is a vowel.

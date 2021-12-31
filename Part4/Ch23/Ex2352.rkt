@@ -27,4 +27,3 @@ For example,
     [(empty? (string->list s)) (cons "" empty)]
     [else
      (cons s (string-suffixes (substring s 1)))]))
-

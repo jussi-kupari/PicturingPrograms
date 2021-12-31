@@ -10,10 +10,9 @@ For example,
 (check-expect (replace-char #\r "fnord" "reference librarian")
 "fnordefefnordence libfnordafnordian")|#
 
-
-
 ;; replace-char : Character String String -> String
-;; Given a Character and two strings, produces the target-str with all specified characters replaced with replacement-str
+;; Given a character and two strings, produces the string with
+;; all specified characters replaced with replacement-string
 (check-expect (replace-char #\a "A" "") "")
 (check-expect (replace-char #\a "A" "acdca") "AcdcA")
 (check-expect (replace-char #\r "fnord" "reference librarian")

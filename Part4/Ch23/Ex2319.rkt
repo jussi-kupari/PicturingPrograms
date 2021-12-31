@@ -2,10 +2,11 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex2319) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ; Exercise 23.1.9
-; Recall the built-in string-append function, which takes in two strings and produces a single string by combining them end to end.
-; Develop a function list-append that takes in two lists (of numbers, strings, it doesn’t matter) and combines them end-to-end
+; Recall the built-in string-append function, which takes in two strings and produces
+; a single string by combining them end to end. Develop a function list-append that
+; takes in two lists (of numbers, strings, it doesn’t matter) and combines them end-to-end
 ; into one list. For example,
-; 
+
 ; (check-expect
 ; (list-append (cons "a" (cons "b" (cons "c" empty)))
 ; (cons "d" (cons "e" empty)))
@@ -19,14 +20,12 @@
 ; have written it yourself. After you’ve finished this exercise, feel free to use append in the
 ; rest of the book.
 
-
 ;; -- Data Definitions
 
 ;; LOO (List-Of-Objects) is one of:
 ;; - empty
 ;; - (cons Employee LOO)
 ;; interp. a list of objects
-
 
 ;; -- Functions
 

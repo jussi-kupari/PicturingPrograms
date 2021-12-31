@@ -20,14 +20,12 @@ example,
 ; could be
 "The senator slept the overrated cat and drank quickly."|#
 
-
 ;; -- Data Definitions
 
 ;; NELOS (Non-Empty-List-Of-Strings) is on of:
 ;; - (cons String empty)
 ;; - (cons String NELOS)
 ;; - interp. a non-empty list of strings
-
 
 ;; -- Functions
 
@@ -84,12 +82,9 @@ example,
        (string=? (string-ith s 1) "a")
        (string=? (string-ith s 2) "d")))
 
-
-
 ;; random-word : NELOS -> String
 (check-member-of
  (random-word (cons "a" (cons "b" (cons "c" empty))))
  "a" "b" "c")
 (define (random-word nelos)
   (list-ref nelos (random (length nelos))))
- 

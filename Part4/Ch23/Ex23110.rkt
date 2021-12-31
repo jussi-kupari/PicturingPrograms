@@ -18,7 +18,6 @@ feel free to use reverse in the rest of the book.|#
 
 ;; -- Functions
 
-
 ;; backwards : LOO -> LOO
 ;; Given a list-of-objects, produces the list in reverse order
 (check-expect (backwards empty) empty)

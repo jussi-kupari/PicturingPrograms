@@ -1,12 +1,11 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex2362_UNSOLVED) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex2362) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 #|Exercise 23.6.2
 Develop a function named sort-candidates that takes in a list of
 candidate structures and returns a list of the same candidate structures in decreasing
 order by number of votes, so the winner is first in the list, the second-place winner is
 second, etc.. In case of ties, either order is acceptable.|#
-
 
 ;; -- Data Definitions
 
@@ -22,18 +21,18 @@ second, etc.. In case of ties, either order is acceptable.|#
 ;; - empty
 ;; - (cons candidate LOC)
 
-
 ;; -- Functions
-
 
 ;; sort-candidates : LOC -> LOC
 ;; Given a LOC, produces a LOC in a larger-to-smaller order by number of votes
 (check-expect (sort-candidates empty) empty)
 (check-expect (sort-candidates (cons (make-candidate "Tom" 24) empty))
               (cons (make-candidate "Tom" 24) empty))
-(check-expect (sort-candidates (cons (make-candidate "Tom" 24) (cons (make-candidate "Jerry" 23) empty)))
+(check-expect (sort-candidates
+               (cons (make-candidate "Tom" 24) (cons (make-candidate "Jerry" 23) empty)))
               (cons (make-candidate "Tom" 24) (cons (make-candidate "Jerry" 23) empty)))
-(check-expect (sort-candidates (cons (make-candidate "Tom" 24) (cons (make-candidate "Jerry" 25) empty)))
+(check-expect (sort-candidates
+               (cons (make-candidate "Tom" 24) (cons (make-candidate "Jerry" 25) empty)))
               (cons (make-candidate "Jerry" 25) (cons (make-candidate "Tom" 24) empty)))
 
 (define (sort-candidates loc)
@@ -42,7 +41,6 @@ second, etc.. In case of ties, either order is acceptable.|#
     [else
      (insert (first loc)
              (sort-candidates (rest loc)))])) ;result of the natural recursion is already sorted!
-
 
 ;; larger-or-equal? : Number Number -> Boolean
 ;; Given two numbers, produces true if the first is larger or equal than the second
@@ -70,9 +68,3 @@ second, etc.. In case of ties, either order is acceptable.|#
      (if (larger-or-equal? (candidate-votes c) (candidate-votes (first loc)))
          (cons c loc)
          (cons (first loc) (insert c (rest loc))))]))
-
-
-
-
-
-

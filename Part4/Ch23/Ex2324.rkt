@@ -1,8 +1,9 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex2324) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-; Exercise 23.2.4 Develop a function unique that takes in a list of objects and returns a list of the same
-; objects, but each appearing only once each.
+; Exercise 23.2.4
+; Develop a function unique that takes in a list of objects and returns
+; a list of the same objects, but each appearing only once each.
 ; 
 ; Hint: There are several ways to do this. Probably the easiest way, given what you’ve
 ; seen so far, produces a result in the order in which each string last appeared in the input;
@@ -19,14 +20,12 @@
 ; Since you don’t know what kind of objects you’re dealing with, you’ll need to use
 ; equal? to compare them.
 
-
 ;; -- Data Definitions
 
 ;; LOO (List-Of-Objects) is one of:
 ;; - empty
 ;; - (cons String LOO)
 ;; interp. a list of objects
-
 
 ;; -- Functions
 
@@ -45,7 +44,6 @@
     [else (if (exists-further-in-list? (first loo) (rest loo))
               (unique (rest loo))
               (cons (first loo) (unique (rest loo))))]))
-
 
 ;; exists-further-in-list? : Object LOO -> Boolean
 ;; Given an object and a LOO, produces true if the obejct is in the list

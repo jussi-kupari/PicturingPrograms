@@ -2,9 +2,8 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex2323) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ; Exercise 23.2.3
-; Develop a function remove-first that takes in a string and a list of strings, and returns the same list but
-; with the first occurrence (if any) of the given string removed.
-
+; Develop a function remove-first that takes in a string and a list of strings,
+; and returns the same list but with the first occurrence (if any) of the given string removed.
 
 ;; -- Data Definitions
 
@@ -20,7 +19,6 @@
 (check-expect (remove-first "a" empty) empty)
 (check-expect (remove-first "a" (cons "a" (cons "b" (cons "c" empty)))) (cons "b" (cons "c" empty)))
 (check-expect (remove-first "b" (cons "a" (cons "b" (cons "c" empty)))) (cons "a" (cons "c" empty)))
-
 
 (define (remove-first s los)
   (cond

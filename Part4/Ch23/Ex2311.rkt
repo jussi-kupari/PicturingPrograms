@@ -5,10 +5,9 @@
 ; Develop a function add1-each that takes in a list of numbers and returns a list of numbers
 ; of the same length, with each element of the answer equal to 1 more than the corresponding
 ; element of the input. For example,
-; 
+ 
 ; (check-expect (add1-each (cons 3 (cons -12 (cons 7 empty))))
 ; (cons 4 (cons -11 (cons 8 empty))))
-
 
 ;; -- Data Definition
 
@@ -16,7 +15,6 @@
 ;; - empty
 ;; - (cons Number LON)
 ;; interp. a list of numbers
-
 
 ;; -- Functions
 

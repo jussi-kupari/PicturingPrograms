@@ -5,11 +5,10 @@
 ; Develop a function stutter that takes in a list of anything
 ; (it doesn’t matter whether they’re strings, numbers, or something else) and returns a list twice as
 ; long, with each element repeated twice in a row.
-; 
+ 
 ; For example,
 ; (check-expect (stutter (cons 5 (cons 2 (cons 9 empty))))
 ; (cons 5 (cons 5 (cons 2 (cons 2 (cons 9 (cons 9 empty)))))))
-
 
 ;; -- Data Definitions
 

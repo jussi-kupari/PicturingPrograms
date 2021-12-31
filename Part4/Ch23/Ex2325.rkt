@@ -6,7 +6,6 @@
 ; of those who earn at most $100,000/year, leaving out the ones who earn more. The remaining employees
 ; should be in the same order they were in before.
 
-
 ;; -- Data Definitions
 
 (define-struct employee (name id salary))
@@ -18,15 +17,20 @@
 ;; - (cons employee LOE)
 ;; interp. a list of employees
 
-
 ;; -- Functions
 (check-expect (fire-over-100k empty) empty)
 (check-expect
- (fire-over-100k (cons (make-employee "Mark" 000 101000) (cons (make-employee "Amy" 001 99000) empty)))
+ (fire-over-100k
+  (cons (make-employee "Mark" 000 101000)
+        (cons (make-employee "Amy" 001 99000) empty)))
  (cons (make-employee "Amy" 001 99000) empty))
 (check-expect
- (fire-over-100k (cons (make-employee "Mark" 000 101000) (cons (make-employee "Amy" 001 99000) (cons (make-employee "Jack" 002 100000) empty))))
- (cons (make-employee "Amy" 001 99000) (cons (make-employee "Jack" 002 100000) empty)))
+ (fire-over-100k
+  (cons (make-employee "Mark" 000 101000)
+        (cons (make-employee "Amy" 001 99000)
+              (cons (make-employee "Jack" 002 100000) empty))))
+ (cons (make-employee "Amy" 001 99000)
+       (cons (make-employee "Jack" 002 100000) empty)))
 
 (define (fire-over-100k loe)
   (cond

@@ -2,8 +2,8 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex2312) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ; Exercise 23.1.2
-; Develop a function square-each that takes in a list of numbers and returns a list of their squares, in the same order.
-
+; Develop a function square-each that takes in a list of numbers and returns a
+; list of their squares, in the same order.
 
 ;; -- Data Definition
 
@@ -11,7 +11,6 @@
 ;; - empty
 ;; - (cons Number LON)
 ;; interp. a list of numbers
-
 
 ;; -- Functions
 

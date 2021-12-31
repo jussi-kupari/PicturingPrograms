@@ -11,7 +11,6 @@ For example,
 (check-expect (pig-latin "hi boys and girls")
 "ihay oysbay andway irlsgay")|#
 
-
 ;; pig-latin: String -> String
 ;; Given a string, converts it to "Pig Latin"
 ;; - if it starts with a vowel, add “way” at the end of the word
@@ -37,7 +36,6 @@ For example,
          " "
          (pig-latin (substring s 1)))])]))
 
-
 ;; extract-word : String -> String
 ;; Given a string, extrat substring to the first space
 (check-expect (extract-word "this is a line.") "this")
@@ -52,7 +50,6 @@ For example,
       (string-ith s 0)
       (extract-word (substring s 1)))]))
 
-
 ;; add-ay : String -> String
 ;; Given a String, add starting consonant to the end and add "ay" to the start
 (check-expect (add-ay "stone") "tonesay")
@@ -63,14 +60,12 @@ For example,
    (string-ith s 0)
    "ay"))
 
-
 ;; add-way : String -> String
 ;; Given a String, add "way" at the end of the string
 (check-expect (add-way "asteroid") "asteroidway")
 
 (define (add-way s)
   (string-append s "way"))
-
 
 ;; vowel? : 1String -> Boolean
 ;; Given a string (length of one), produces true if it is a vowel.
