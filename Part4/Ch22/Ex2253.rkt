@@ -7,7 +7,6 @@
 ; You want to know whether there are any in stock. Develop a function contains-doll?
 ; that takes in a list of strings and tells whether any of the strings in the list is "doll".
 
-
 ;; -- Data Definitions
 
 ;; LOS (ListOfStrings) is one of:
@@ -43,5 +42,3 @@
     [else (if (string=? (first los) "doll")
               true
               (contains-doll? (rest los)))]))
-
-

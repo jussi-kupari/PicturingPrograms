@@ -6,7 +6,6 @@
 ; letter “e” appears in it. You may assume there are no capital letters
 ; (i.e. you don’t need to count “E”).
 
-
 ;; count-e : String -> Natural
 ;; Given a string, produces the sum of all letters "e" in the string
 (check-expect (count-e "") 0)
@@ -20,11 +19,9 @@
               (add1 (count-e (substring string 1)))
               (count-e (substring string 1)))]))
 
-
 ; Converting the string to a list of characters.
-; 
+ 
 ; This uses the "count-matches" function from Ex22.5.5
-
 
 ;; -- Data Definitions
 

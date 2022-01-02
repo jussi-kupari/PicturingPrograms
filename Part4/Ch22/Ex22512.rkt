@@ -6,7 +6,6 @@
 ; Develop a function dollar-store? that takes in a list of numbers (the prices
 ; of various items), and tells whether the store qualifies as a “dollar store”.
 
-
 ;; -- Data Definition
 
 ;; LON (ListOfNumbers) is one of:
@@ -42,16 +41,3 @@
     [else (if (< 0 (first lon) 1)
               (dollar-store? (rest lon))
               false)]))
-
-
-
-
-
-
-
-
-
-
-
-
-

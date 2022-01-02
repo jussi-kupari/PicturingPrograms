@@ -4,7 +4,7 @@
 ; Exercise 22.5.13
 ; Develop a function all-match? that takes in a string and a list of strings, and tells
 ; whether all the strings in the list match the given string.
-; 
+
 ; For example,
 ; (check-expect
 ; (all-match? "cat" (cons "cat" (cons "dog" (cons "cat" empty))))
@@ -12,7 +12,6 @@
 ; (check-expect
 ; (all-match? "cat" (cons "cat" (cons "cat" empty)))
 ; true)
-
 
 ;; -- Data Definitions
 
@@ -51,4 +50,3 @@ true)
     [else (if (string=? string (first los))
               (all-match? string (rest los))
               false)]))
-

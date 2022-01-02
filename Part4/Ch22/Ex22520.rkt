@@ -1,7 +1,8 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex22520) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-; Exercise 22.5.20 Develop a function random-element that takes in a non-empty list
+; Exercise 22.5.20
+; Develop a function random-element that takes in a non-empty list
 ; and returns a randomly chosen element of it. Ideally, each element should be equally likely
 ; to be chosen.
 ; Hint: You’ll probably need the built-in list-ref function, which takes in a non-empty
@@ -25,7 +26,6 @@
 ; at an arbitrary numeric position. That’s actually not a common thing to need; 95% of
 ; the time, you’ll be better off using first and rest.
 
-
 ;; -- Data Definition
 
 ;; LOB (ListOfObjects) is one of:
@@ -48,5 +48,3 @@
  (random-element (cons "a" (cons "b" (cons "c" (cons "d" empty))))) "a" "b" "c" "d")
 (define (random-element nelob)
   (list-ref nelob (random (length nelob)))) 
-
-

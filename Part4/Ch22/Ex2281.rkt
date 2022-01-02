@@ -5,7 +5,6 @@
 Write a data definition, including templates, for a nested string list, in which each
 element may be either a string or another nested string list.|#
 
-
 ;; -- Data Definition
 
 ;; NSL (NestedStringList) is one of:
@@ -13,13 +12,9 @@ element may be either a string or another nested string list.|#
 ;; - (cons String NSL)
 ;; - (cons LOS NSL)
 
-
-
 ;; LOS is one of:
 ;; - empty
 ;; - (cons String LOS)
-
-
 
 #|Template for NSL
 (define (fn-for-nsl nsl)
@@ -31,7 +26,6 @@ element may be either a string or another nested string list.|#
     [else
      (... (fn-for-nsl (first nsl))
           (fn-for-nsl (rest nsl)))]))|#
-
 
 #|Exercise 22.8.2
 Translate the following English sentences into nested string lists, using a list to
@@ -46,7 +40,6 @@ Christmas Eve.”
 “Once upon a time, there was a beautiful princess named Buttercup. The stable-boy,
 Wesley, was in love with her, but never said anything but “As you wish.” ” ” The
 boy was already asleep.” |#
-
 
 (cons
  "We"

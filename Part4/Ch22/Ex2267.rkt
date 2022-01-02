@@ -6,7 +6,6 @@ Develop an animation similar to Exercise 20.6.4, but every few seconds a dot is 
 (in addition to whatever dots are already there), and if you click inside any of the existing dots,
 the game ends. (The game will be easy to win, since pretty soon the screen fills with dots so it’s
 hard not to hit one.) Hint: Use a list of posns as the model.
-
 __
 
 Finding the solution doesn't seem trivial here.
@@ -29,7 +28,6 @@ Mine is a bit hacky, but I can't figure out a more obvious solution.|#
 ;; - (cons Posn LPOS)
 ;; interp. a list of Posns
 
-
 ;; -- Functions
 
 ;; main : LPOS -> LPOS
@@ -41,7 +39,6 @@ Mine is a bit hacky, but I can't figure out a more obvious solution.|#
     (stop-when hit-found?)
     (to-draw render-lpos)
     (on-mouse hit-dot)))
-
 
 ;; next-lpos : LPOS -> LPOS
 ;; Given LPOS, produces a new LPOS with a new Posn with random x and y
@@ -77,7 +74,6 @@ Mine is a bit hacky, but I can't figure out a more obvious solution.|#
                                (add1 (image-height SCENE)))
                     (hit-dot (rest lpos) x y me)))]))
 
-
 ;; hit-found? : LPOS -> Boolean
 ;; Given LPOS, produces true if a hit has occurred ("special" Posn is found)
 
@@ -91,7 +87,6 @@ Mine is a bit hacky, but I can't figure out a more obvious solution.|#
               (first lpos))
       true
       (hit-found? (rest lpos)))]))
-
 
 ;; hit? : Posn Number Number MouseEvent -> Boolean
 ;; Given a Posn mouse xy and mouse-event, produces true if cursor xy match Posn and "button-down"

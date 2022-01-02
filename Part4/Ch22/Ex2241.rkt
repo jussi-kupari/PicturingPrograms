@@ -7,7 +7,6 @@
 ; For each one, predict what it will return before hitting ENTER, and see whether you were
 ; right. If not, figure out why it came out as it did.
 
-
 ;; LOS (ListOfStrings) is one of:
 ;; - empty
 ;; - (cons string LOS)

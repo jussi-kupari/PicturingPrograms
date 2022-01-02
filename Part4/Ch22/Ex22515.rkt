@@ -67,17 +67,3 @@
 ;; Given image of the bull's eye, produces it on top of the scene
 (define (render-image los)
   (overlay (general-bullseye los) (empty-scene 200 200)))
-
-
-
-
-
-
-
-
-
-
-
-
-
-

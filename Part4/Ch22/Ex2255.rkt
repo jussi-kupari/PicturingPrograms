@@ -4,7 +4,7 @@
 ; Exercise 22.5.5
 ; Develop a function count-matches that takes in an object and a list of objects and tells
 ; how many (possibly zero) of the objects in the list are the same as the given object.
-; 
+ 
 ; For example,
 ; (check-expect
 ; (count-matches "cat" (cons "dog" (cons "cat" (cons "fish"
@@ -14,13 +14,11 @@
 ; (count-matches 1 (cons 3 (cons 1 (cons 4
 ; (cons 1 (cons 5 (cons 9 empty)))))))
 ; 2)
-; 
+
 ; Hint: For this one, you probably will need a nested conditional.
 ; There’s an additional difference: this function is supposed to work on any kind of
 ; object, not just strings. So instead of string=?, you’ll need to use the built-in function
 ; equal?.
-; 
-; 
 
 (require picturing-programs)
 
@@ -67,7 +65,3 @@
     [else (if (equal? obj (first loo))
               (add1 (count-matches obj (rest loo)))
               (count-matches obj (rest loo)))]))
-
-
-
-

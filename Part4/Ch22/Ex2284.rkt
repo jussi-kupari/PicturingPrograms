@@ -12,13 +12,9 @@ the total number of simple strings in it, no matter how many levels of nested li
 ;; - (cons String NSL)
 ;; - (cons LOS NSL)
 
-
-
 ;; LOS is one of:
 ;; - empty
 ;; - (cons String LOS)
-
-
 
 #|Template for NSL
 (define (fn-for-nsl nsl)
@@ -68,9 +64,6 @@ the total number of simple strings in it, no matter how many levels of nested li
                                             "Eve"
                                             (cons
                                              "." empty)))))))))) 14)
-
-
-
 
 (define (count-strings-nested nsl)
   (cond

@@ -7,7 +7,6 @@
 ; For each one, predict what it will return before hitting ENTER, and see whether you were
 ; right. If not, figure out why it came out as it did.
 
-
 ; An empty list has no parts.
 (define-struct empty-list ())
 ; make-empty-list : nothing -> empty-list
@@ -35,6 +34,7 @@
 [(nelos? L) (function-on-nelos L)]
 ))
 |#
+
 (define nothing (make-empty-list))
 (define english (make-nelos "hello" nothing))
 (define fr-eng (make-nelos "bonjour" english))
@@ -44,9 +44,6 @@
 (define dwarfs (make-nelos "sleepy" (make-nelos "sneezy"
 (make-nelos "dopey" (make-nelos "doc" (make-nelos "happy"
 (make-nelos "bashful" (make-nelos "grumpy" nothing))))))))
-
-
-
 
 (empty-list? nothing)                                      ;true
 (nelos? nothing)                                           ;false
@@ -68,7 +65,3 @@
 (nelos-rest ashfe)                                         ;(make-nelos "buenos dias" heb-fr-eng) 
 (nelos-first (nelos-rest (nelos-rest ashfe)))              ;"shalom 
 (nelos-first (nelos-rest (nelos-rest (nelos-rest dwarfs))));"doc 
-
-
-
-

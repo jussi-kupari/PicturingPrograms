@@ -5,9 +5,8 @@
 ; Develop a function average that takes in a list of numbers and returns their average, i.e.
 ; their sum divided by how many there are. For this problem, you may assume there is at least
 ; one number in the list.
-; 
-; Hint: Not every function on lists can best be written by following the templates...
 
+; Hint: Not every function on lists can best be written by following the templates...
 
 ;; -- Data Definition
 
@@ -40,7 +39,6 @@
     [(empty? (rest lon)) (first lon)]
     [else (/ (sum lon) (lon-length lon))]))
 
-
 ;; sum : LON -> Number
 ;; Given a LON, produces the sum of the numbers
 (check-expect (sum (cons 1 empty)) 1)
@@ -61,7 +59,3 @@
   (cond
     [(empty? (rest lon)) 1]
     [else (add1 (lon-length (rest lon)))]))
-
-
-
-

@@ -6,7 +6,6 @@
 ; their average. If the list is empty, it should signal an error with an appropriate
 ; and user-friendly message.
 
-
 ;; -- Data Definition
 
 ;; LON (ListOfNumbers) is one of:
@@ -43,7 +42,6 @@
      (error "Attempting to calculate an average for an empty list!")]
     [(empty? (rest lon)) (first lon)]
     [else (/ (sum lon) (lon-length lon))]))
-
 
 ;; sum : LON -> Number
 ;; Given a LON, produces the sum of the numbers

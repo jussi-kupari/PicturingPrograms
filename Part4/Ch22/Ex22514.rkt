@@ -44,10 +44,3 @@
     [else
      (overlay (circle (first lon) "outline" "black")
               (general-bullseye (rest lon)))]))
-
-
-
-
-
-
-

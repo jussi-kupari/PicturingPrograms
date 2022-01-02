@@ -4,10 +4,9 @@
 ; Worked Exercise 22.4.2
 ; Define a function count-strings that takes in a los and returns how many strings are in it:
 ; 0 for an empty list, 1 for a list of one element, and so on.
-; 
+
 ; Solution:
 ; We’ll write two functions: one that works on a los, and one that works on a nelos.
-
 
 ;; LOS (ListOfStrings) is one of:
 ;; - empty
@@ -19,15 +18,18 @@
 ;; - (cons string NELOS)
 ;; interp. a non-empty list of strings
 
-
 (define english (cons "hello" empty))
 (define fr-eng (cons "bonjour" english))
 (define heb-fr-eng (cons "shalom" fr-eng))
 (define shfe (cons "buenos dias" heb-fr-eng))
 (define ashfe (cons "salaam" shfe))
-(define dwarfs (cons "sleepy" (cons "sneezy" (cons "dopey" (cons "doc"
-                                                                 (cons "happy" (cons "bashful" (cons "grumpy" empty))))))))
-
+(define dwarfs (cons "sleepy"
+                     (cons "sneezy"
+                           (cons "dopey"
+                                 (cons "doc"
+                                       (cons "happy"
+                                             (cons "bashful"
+                                                   (cons "grumpy" empty))))))))
 
 ;; count-strings : LOS -> Natural
 ;; Given a LOS, produces the number of strings in the list
@@ -37,11 +39,9 @@
 (check-expect (count-strings ashfe) 5)
 (check-expect (count-strings dwarfs) 7)
 
-
 (define (count-strings los)
   (cond [(empty? los) 0]
         [else (count-strings-on-nelos los)]))
-
 
 ;; count-strings-nelos : NELOS -> Natural
 ;; Given a NELOS, prodices the number of strings in the list
@@ -51,10 +51,8 @@
 (check-expect (count-strings-on-nelos ashfe) 5)
 (check-expect (count-strings-on-nelos dwarfs) 7)
 
-
 (define (count-strings-on-nelos nelos)
   (+ 1 (count-strings (rest nelos))))
-
 
 ;; count-strings-full : LOS -> Natural
 ;; Given a LOS, produces the number of strings in the list

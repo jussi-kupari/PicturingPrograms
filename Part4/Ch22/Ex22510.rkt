@@ -10,9 +10,8 @@
 ; (check-expect
 ; (convert-reversed (cons 3 (cons 0 (cons 2 (cons 5 empty)))))
 ; 5203)
-; 
-; Do not use the built-in string->number function for this exercise.
 
+; Do not use the built-in string->number function for this exercise.
 
 ;; -- Data Definition
 
@@ -45,11 +44,3 @@
     [(empty? lon) 0]
     [else
      (+ (first lon) (* 10 (convert-reversed (rest lon))))]))
-
-(convert-reversed (cons 1 (cons 2 (cons 3 (cons 4 (cons 5 empty))))))
-
-
-
-
-
-

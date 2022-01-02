@@ -6,7 +6,6 @@
 ; how many vowels (any of the letters “a”, “e”, “i”, “o”, or “u”) it contains.
 ; You may assume there are no capital letters.
 
-
 ;; count-vowels : String -> Natural
 ;; Given a string, returns the sum of vowels
 (check-expect (count-vowels "") 0)
@@ -25,7 +24,6 @@
               (count-vowels (substring str 1)))]))
 
 ; String to list method
-
 
 ;; -- Data Definitions
 

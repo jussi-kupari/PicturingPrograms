@@ -5,7 +5,7 @@
 ; which may contain some repetitions, and tells how many blocks of repeated numbers there
 ; are. A block is one or more copies of the same number appearing in the list, with no other
 ; numbers in between. For example,
-; 
+
 ; (check-expect (count-blocks
 ; (cons 3 (cons 3 (cons 2 (cons 7 (cons 7 (cons 7
 ; (cons 2 (cons 2 empty)))))))))
@@ -23,7 +23,6 @@
 ; numbers but also the number we’re “already looking at:” if the list is non-empty, you can
 ; reasonably check whether its first number is the same as the one you’re already looking
 ; at.
-
 
 ;; -- Data Definition
 

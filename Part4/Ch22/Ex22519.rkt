@@ -26,7 +26,6 @@
 ; looking for particular patterns. The above approach is one that computer scientists
 ; call a finite-state machine or finite-state automaton.
 
-
 ;; -- Data Definition
 
 ;; LON (ListOfNumbers) is one of:

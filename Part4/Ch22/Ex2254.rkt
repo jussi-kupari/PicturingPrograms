@@ -4,7 +4,7 @@
 ; Exercise 22.5.4
 ; Develop a function any-matches? that takes in a string and a list of strings and tells
 ; whether any of the strings in the list is the same as the given string.
-; 
+ 
 ; For example,
 ; (check-expect
 ; (any-matches? "fnord" (cons "snark" (cons "boojum" empty)))
@@ -12,13 +12,12 @@
 ; (check-expect
 ; (any-matches? "fnord" (cons "snark" (cons "fnord" empty)))
 ; true)
-; 
+ 
 ; Hint: The templates for operating on lists use a conditional to decide whether you’ve
 ; got an empty or a non-empty list. This function needs to make another decision: does
 ; the current string match the target or not? You can do this with another conditional,
 ; or (since this function returns a boolean), you can do it more simply without the extra
 ; conditional.
-
 
 ;; -- Data Definitions
 
@@ -57,6 +56,3 @@
     [else (if (string=? s (first los))
               true
               (any-matches? s (rest los)))]))
-
-
-

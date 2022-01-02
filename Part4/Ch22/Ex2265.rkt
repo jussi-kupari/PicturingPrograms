@@ -4,10 +4,9 @@
 ; Exercise 22.6.5
 ; Develop a function avg-votes that takes in a list of candidate
 ; structures and returns the average number of votes for each candidate.
-; 
+
 ; Hint: This doesn’t have a reasonable answer if there are no candidates. How do you
 ; want to handle this case?
-
 
 ;; -- Data Definitions
 
@@ -18,7 +17,6 @@
 ;; LOC (ListOfCandidates) is one of:
 ;; - empty
 ;; - (cons candidate LOC)
-
 
 ;; -- Functions
 
@@ -39,8 +37,6 @@
     [(empty? loc)
      (error "Can't compute average for an empty list!")]
     [else (/ (total-votes loc) (total-candidates loc))]))
-
-
 
 ;; total-votes : LOC -> Natural
 ;; Given a LOC, returns the total sum of votes cast

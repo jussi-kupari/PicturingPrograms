@@ -6,7 +6,6 @@
 ; structures (from Exercise 21.2.1) and tells whether any of them earn over $100,000 per
 ; year.
 
-
 ;; -- Data Definitions
 
 (define-struct employee (name id salary))
@@ -17,7 +16,6 @@
 ;; - empty
 ;; (cons employee LOE)
 ;; interp. a list of employees
-
 
 ;; -- Functions
 

@@ -6,7 +6,6 @@
 ; of adding them all together.
 ; For example, (check-expect (add-up (cons 4 (cons 8 (cons -3 empty)))) 9)
 
-
 ;; -- Data Definition
 
 ;; LON (ListOfNumbers) is one of:
@@ -41,11 +40,3 @@
   (cond
     [(empty? lon) 0]
     [else (+ (first lon) (add-up (rest lon)))]))
-
-
-
-
-
-
-
-

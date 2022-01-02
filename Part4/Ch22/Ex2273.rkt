@@ -5,7 +5,6 @@
 ; Develop a function has-spaces? that takes in a string and tells
 ; whether it contains any blanks.
 
-
 ;; has-spaces? : String -> Boolean
 ;; Given a string, produces the true if the string has spaces in it
 (check-expect (has-spaces? "") false)
@@ -20,11 +19,7 @@
               true
               (has-spaces? (substring str 1)))]))
 
-
-
 ; String to list method
-
-
 
 ;; -- Data Definitions
 
@@ -32,7 +27,6 @@
 ;; - empty
 ;; - (cons Object LOO)
 ;; interp. a list of objects
-
 
 ;; has-spaces?.v2 : String -> Boolean
 ;; Given a string, returns true if the string contains spaces
@@ -59,6 +53,3 @@
     [else (if (equal? obj (first loo))
               true
               (any-matches? obj (rest loo)))]))
-
-
-

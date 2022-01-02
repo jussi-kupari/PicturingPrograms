@@ -4,13 +4,12 @@
 ; Exercise 22.5.11
 ; Develop a function multiply-all that takes in a list of numbers and returns the result
 ; of multiplying them all together.
-; 
+ 
 ; For example,
 ; (check-expect (multiply-all (cons 3 (cons 5 (cons 4 empty)))) 60)
 ; 
 ; Hint: What is the “right answer” for the empty list? It may not be what you think at
 ; first! <- answer seems to be 1
-
 
 ;; -- Data Definition
 

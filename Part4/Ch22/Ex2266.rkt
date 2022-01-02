@@ -5,10 +5,9 @@
 ; Develop a function winner that takes in a list of candidate structures and returns the one
 ; with the most votes. If there are two or more tied for first place,
 ; you can return whichever one you wish.
-; 
+
 ; Hint: This doesn’t have a reasonable answer if there are no candidates. How do you
 ; want to handle this case?
-
 
 ;; -- Data Definitions
 
@@ -19,7 +18,6 @@
 ;; LOC (ListOfCandidates) is one of:
 ;; - empty
 ;; - (cons candidate LOC)
-
 
 ;; -- Functions
 

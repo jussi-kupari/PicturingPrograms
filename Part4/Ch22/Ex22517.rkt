@@ -3,7 +3,7 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex22517) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ; Exercise 22.5.17
 ; Develop a function largest that takes in a list of numbers and returns the largest one.
-; 
+ 
 ; Hint: This function doesn’t really make sense on an empty list, so the input data type
 ; is really “non-empty list of numbers,” and the simplest test case should be a one-element
 ; list. Since largest doesn’t make sense on an empty list, you should be careful never to
@@ -19,14 +19,12 @@
 ; ; (function-on-nelos (rest L)) whatever this returns
 ; ...]))
 
-
 ;; -- Data Definition
 
 ;; NELON (NonEmptyListOfNumbers) is one of:
 ;; - (cons number empty)
 ;; - (cons number NELON)
 ;; interp. a non-empty list of numbers
-
 
 ;; -- Functions
 
@@ -58,8 +56,3 @@
     [else (if (< n (first nelon))
               false
               (first-largest? n (rest nelon)))]))
-
-
-
-
-

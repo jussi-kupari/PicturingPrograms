@@ -5,7 +5,6 @@
 ; Develop a function any-on-diag? that takes in a list of posn structures and tells whether any of
 ; them are “on the diagonal,” i.e. have x and y coordinates equal to one another.
 
-
 ;; -- Data Definition
 
 ;; LPONS (ListOfPosns) is one of:
@@ -42,4 +41,3 @@ true)
     [else (if (= (posn-x (first lposn)) (posn-y (first lposn)))
               true
               (any-on-diag? (rest lposn)))]))
-

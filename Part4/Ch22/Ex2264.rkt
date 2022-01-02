@@ -5,7 +5,6 @@
 ; Develop a function total-votes that takes in a list of candidate structures (from Exercise 21.3.3)
 ; and returns the total number of votes cast in the election.
 
-
 ;; -- Data Definitions
 
 (define-struct candidate (name votes))
@@ -15,7 +14,6 @@
 ;; LOC (ListOfCandidates) is one of:
 ;; - empty
 ;; - (cons candidate LOC)
-
 
 ;; -- Functions
 

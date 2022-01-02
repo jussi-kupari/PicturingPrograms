@@ -5,9 +5,8 @@
 ; Develop a function count-votes-for-name that takes in a string (the name of a candidate)
 ; and a list of strings (the votes cast by a bunch of voters) and tells how many of the
 ; voters voted for this particular candidate.
-; 
-; Hint: This is really easy if you re-use previously-written functions.
 
+; Hint: This is really easy if you re-use previously-written functions.
 
 ;; -- Data Definitions
 
@@ -41,7 +40,7 @@
 (check-expect
  (count-votes-for-name "john" (cons "mary" (cons "john" (cons "mary" empty)))) 1)
 (check-expect
- (count-votes-for-name "mary" (cons "mary" (cons "john" (cons "mary" empty)))) 2s)
+ (count-votes-for-name "mary" (cons "mary" (cons "john" (cons "mary" empty)))) 2)
 
 (define (count-votes-for-name name los)
   (cond
@@ -49,15 +48,3 @@
     [else (if (string=? name (first los))
               (add1 (count-votes-for-name name (rest los)))
               (count-votes-for-name name (rest los)))]))
-
-
-
-
-
-
-
-
-
-
-
-

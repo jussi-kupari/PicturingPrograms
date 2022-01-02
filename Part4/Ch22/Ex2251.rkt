@@ -4,9 +4,8 @@
 ; Worked Exercise 22.5.1
 ; Define a data type list-of-numbers (or lon for short), including a template for
 ; functions operating on lists of numbers.
-; 
+ 
 ; Develop a function count-numbers that takes in a list of numbers and returns a number.
-
 
 ;; -- Data Definition
 

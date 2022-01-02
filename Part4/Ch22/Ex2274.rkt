@@ -9,7 +9,6 @@ between words.
 
 Hint: This problem is similar to Exercise 22.5.19. In addition, you’ll probably want the
 built-in function char-alphabetic?. Look it up in the Help Desk.
-
 __
 
 Note: My solution here can't handle quotes between alphabets and perhaps some other situations.
@@ -38,8 +37,6 @@ Not the most elegant solution.|#
   (string-alphabetic?
    (substring str (sub1 (string-length str)))))
 
-
-
 ;; count-words-in-nelos : NELOS -> Natural
 ;; Given a non-empty list of 1-strings, counts the number of times an alphabet
 ;; is followed by a non-alphabet.
@@ -54,7 +51,6 @@ Not the most elegant solution.|#
                                      (cons
                                       #\space
                                       (cons #\d (cons #\e (cons #\f (cons #\. '()))))))))) 2)
-
 
 (define (count-words-in-nelos nelos)
   (cond

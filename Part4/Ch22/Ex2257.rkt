@@ -5,7 +5,6 @@
 ; Develop a function count-over that takes in a number and a list of numbers, and tells
 ; how many of the numbers in the list are larger than the specified number.
 
-
 ;; -- Data Definition
 
 ;; LON (ListOfNumbers) is one of:
@@ -41,5 +40,3 @@
     [else (if (> (first lon) num)
           (add1 (count-over num (rest lon)))
                 (count-over num (rest lon)))]))
-
-

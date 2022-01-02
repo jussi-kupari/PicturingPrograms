@@ -5,7 +5,6 @@
 ; Write a data definition, including templates, for a list of lists of
 ; strings. Write several examples of this data type.
 
-
 ;; -- Data Definition
 
 ;; LOS (ListOfStrings) is one of:
@@ -17,7 +16,6 @@
 (define LOS2 (cons "a" empty))
 (define LOS3 (cons "a" (cons "b" empty)))
 (define LOS4 (cons "a" (cons "b" (cons "c" empty))))
-
 
 ;; NELOS (NonEmptyListOfStrings) is one of:
 ;; - (cons string empty)
@@ -39,14 +37,10 @@
 (define LOLOS3
   (cons (cons "a" (cons "b" (cons "c" empty))) (cons (cons "c" (cons "d" empty)) empty)))
 
-
-
 ;; -- Functions
 
 ; Develop a function total-length that takes in a list of lists of strings and returns
 ; the total number of strings appearing in all the lists put together.
-
-
 
 ;; total-length : LOLOS -> Natural
 ;; Given a LOLOS, produces the total number of string is the LOLOS
@@ -60,11 +54,9 @@
     [else (+ (length (first lolos))
              (total-length (rest lolos)))]))
 
-
 ; Develop a function longest that takes in a non-empty list of lists of strings and
 ; returns the longest of the lists. If there are two or more of the same maximum length, it
 ; may return either one at your choice.
-
 
 ;; longest : NELOLOS -> NELOS
 ;; Given a NELOLOS, produces the longest NELOS
@@ -76,7 +68,6 @@
     [else (if (longest-of-all? (first nelolos) (rest nelolos))
               (first nelolos)
               (longest (rest nelolos)))]))
-
 
 ;; longest-of-all? : NELOS NELOLOS -> Boolean
 ;; Given a NELOS and a NELOLOS, produces true if the NELOLOS is the longest of all
@@ -99,4 +90,3 @@
     [else (if (>= (length nelos) (length (first nelolos)))
               (longest-of-all? nelos (rest nelolos))
               false)]))
-

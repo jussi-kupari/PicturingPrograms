@@ -6,7 +6,6 @@
 ; (from Exercise 21.2.1) and returns the first one whose name matches the string.
 ; If there is none, it should return false.
 
-
 ;; -- Data Definitions
 
 (define-struct employee (name id salary))
@@ -17,7 +16,6 @@
 ;; - empty
 ;; (cons employee LOE)
 ;; interp. a list of employees
-
 
 ;; -- Functions
 
