@@ -48,15 +48,12 @@
 (check-expect
  (rects-overlap? (make-placed-rect (make-posn 0 0) 10 10)
                  (make-placed-rect (make-posn 0 0) 10 10)) true)
-
 (check-expect
  (rects-overlap? (make-placed-rect (make-posn 0 0) 10 10)
                  (make-placed-rect (make-posn 9 9) 10 10)) true)
-
 (check-expect
  (rects-overlap? (make-placed-rect (make-posn 0 0) 10 10)
                  (make-placed-rect (make-posn 9 9) 10 10)) true)
-
 (check-expect
  (rects-overlap? (make-placed-rect (make-posn 0 0) 10 10)
                  (make-placed-rect (make-posn 10 10) 10 10)) false)
@@ -70,11 +67,9 @@
 (check-expect
  (x-overlap-rect? (make-placed-rect (make-posn 0 0) 10 10)
                   (make-placed-rect (make-posn 0 0) 10 10)) true)
-
 (check-expect
  (x-overlap-rect? (make-placed-rect (make-posn 0 0) 10 10)
                   (make-placed-rect (make-posn 9 10) 10 10)) true)
-
 (check-expect
  (x-overlap-rect? (make-placed-rect (make-posn 0 0) 10 10)
                   (make-placed-rect (make-posn 10 10) 10 10)) false)
@@ -88,11 +83,9 @@
 (check-expect
  (y-overlap-rect? (make-placed-rect (make-posn 0 0) 10 10)
                   (make-placed-rect (make-posn 0 0) 10 10)) true)
-
 (check-expect
  (y-overlap-rect? (make-placed-rect (make-posn 0 0) 10 10)
                   (make-placed-rect (make-posn 10 9) 10 10)) true)
-
 (check-expect
  (y-overlap-rect? (make-placed-rect (make-posn 0 0) 10 10)
                   (make-placed-rect (make-posn 10 10) 10 10)) false)
@@ -211,7 +204,6 @@
 (check-expect
  (x-overlap-circ-rect? (make-placed-circ (make-posn 0 0) 10)
                        (make-placed-rect (make-posn 9 9) 10 20)) true)
-
 (check-expect
  (x-overlap-circ-rect? (make-placed-circ (make-posn 0 0) 10)
                        (make-placed-rect (make-posn 10 10) 10 5)) false)
@@ -229,7 +221,6 @@
 (check-expect
  (y-overlap-circ-rect? (make-placed-circ (make-posn 0 0) 10)
                        (make-placed-rect (make-posn 9 9) 5 10)) true)
-
 (check-expect
  (y-overlap-circ-rect? (make-placed-circ (make-posn 0 0) 10)
                        (make-placed-rect (make-posn 10 10) 20 10)) false)
