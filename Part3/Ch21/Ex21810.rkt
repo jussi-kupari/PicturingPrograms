@@ -6,7 +6,6 @@
 ; ber of hours you’re willing to travel, and will return how far you can go in that much time
 ; on this vehicle.
 
-
 ;; -- Data Definitions
 
 ;; Vehicle is one of:
@@ -25,8 +24,6 @@
 (define-struct train (weight topspeed length))
 ;; Train is (make-train (Number Number Number))
 ;; interp. a train with weight top-speed and length
-
-
 
 ;; -- Functions
 

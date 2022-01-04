@@ -9,13 +9,11 @@
 
 (require picturing-programs)
 
-
 ;; -- Data Definition
 
 (define-struct placed-circ (center radius))
 ;; Placed-circ is a (make placed-circ Posn Natural)
 ;; interp. a representation of a circle with the xy position of the center and radius
-
 
 ;; -- Functions
 
@@ -30,8 +28,6 @@
   (< (center-distance-circ c1 c2)
      (+ (placed-circ-radius c1) (placed-circ-radius c2))))
 
-
-
 ;; center-distance-circ : Placed-circle Placed-circle -> Number
 ;; Given two place circles, produces the distance between the centers
 (check-expect (center-distance-circ (make-placed-circ (make-posn 0 0) 10)
@@ -44,7 +40,6 @@
    (+ (sqr (distance-x-circ c1 c2))
       (sqr (distance-y-circ c1 c2)))))
 
-
 ;; distance-x-circ : Placed-circle Placed-circle -> Number
 ;; Given two place circles, produces the distance between the x-coordinates
 (check-expect (distance-x-circ (make-placed-circ (make-posn 0 0) 10)
@@ -55,7 +50,6 @@
 (define (distance-x-circ c1 c2)
   (- (posn-x (placed-circ-center c1))
      (posn-x (placed-circ-center c2))))
-
 
 ;; distance-y-circ : Placed-circle Placed-circle -> Number
 ;; Given two place circles, produces the distance between the y-coordinates
@@ -68,4 +62,3 @@
 (define (distance-y-circ c1 c2)
   (- (posn-y (placed-circ-center c1))
      (posn-y (placed-circ-center c2))))
-

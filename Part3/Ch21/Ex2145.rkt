@@ -5,7 +5,6 @@
 ; Develop a function person=? that takes in two person structs and tells
 ; whether they have the exact same name and age. You may not use the built-in equal?
 ; function to solve this problem.
-
 (require picturing-programs)
 
 ;; -- Data Definition

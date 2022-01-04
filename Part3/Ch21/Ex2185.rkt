@@ -8,7 +8,6 @@
 ; this with a slow clock tick, e.g. 5 seconds, so you have time to try clicking in several
 ; places just outside various sides of the shape to make sure they don’t count as hits.
 
-
 ; Exercise 20.6.4
 ; Modify Exercise 20.6.3 so that if the user clicks the mouse on the
 ; dot (i.e. within a distance of 3 from its current center), the animation ends with the
@@ -21,7 +20,6 @@
 
 ;Scene
 (define SCENE (empty-scene 100 100))
-
 
 ;; -- Data Definitions
 
@@ -40,7 +38,6 @@
 ;; Placed-rect is a (make placed-rect Posn Natural)
 ;; interp. a representation of a rectangle with the xy position of the “top-left corner”
 ;; and width and height of the sides
-
 
 ;; -- Functions
 
@@ -65,7 +62,6 @@
                                   (random (image-height SCENE)))
                        (random 40) (random 40))]))
 
-
 ;; render-dot : Shape -> Image
 ;; Given a Shape, produces an image of the Shape on the scene
 
@@ -83,7 +79,6 @@
            (posn-x (placed-rect-corner s))
            (posn-y (placed-rect-corner s))
            SCENE)]))
-
 
 ;; hit-the-shape : Shape Number Number MouseEv -> Shape or stop
 ;; Given a Shape, mouse xy and mouse-event, continue or stop the animation
@@ -105,11 +100,11 @@
     [(placed-circ? s) (hit-the-circ s x y me)]
     [else (hit-the-rect s x y me)]))
 
-
 ;; hit-the-circ : Placed-circ Number Number MouseEv -> Placed-circ or stop
 ;; Given a Placed-circ, mouse xy and mouse-event, continue or stop the animation
 (check-expect
- (hit-the-circ (make-placed-circ (make-posn 0 0) 10) 5 5 "button-down") (make-placed-circ (make-posn 0 0) 10))
+ (hit-the-circ (make-placed-circ (make-posn 0 0) 10) 5 5 "button-down")
+ (make-placed-circ (make-posn 0 0) 10))
 (check-expect
  (hit-the-circ (make-placed-circ (make-posn 0 0) 10) 0 0 "move")
  (make-placed-circ (make-posn 0 0) 10))

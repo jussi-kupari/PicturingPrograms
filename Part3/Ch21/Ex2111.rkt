@@ -14,5 +14,3 @@
 ; selectors/getters: posn-x and posn-y
 ; 
 ; discriminator/predicate: posn?
-
-

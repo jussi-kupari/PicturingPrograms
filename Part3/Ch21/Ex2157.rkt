@@ -6,11 +6,9 @@
 ; and produces a new rect whose length is the width of the given
 ; rect, and vice versa.
 
-
 (define-struct rektangle (length width))
 ;; Rektangle is (make-rektangle Natural Natural)
 ;; interp. a mathematical rectangle
-
 
 ;; swap-length-width : Rektangle -> Rektangle
 ;; Given a Rektangle, swaps the length and width
@@ -20,4 +18,3 @@
 (define (swap-length-width rec)
   (make-rektangle (rektangle-width rec)
                   (rektangle-length rec)))
-

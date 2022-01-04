@@ -10,7 +10,6 @@
 
 ;; -- Data Definitions
 
-
 (define-struct monkey (name weight favfood))
 ;; Monkey is a (make-monkey String Number Number)
 ;; interp. a representation of a monkey with name, weight and favorite food
@@ -61,9 +60,3 @@
     [(and (sloth? za)
           (<= (sloth-weight za) capacity) (sloth-awake? za)) true]
     [else false]))
-
-
-
-
-
-

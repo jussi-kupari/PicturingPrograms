@@ -7,7 +7,6 @@
 ; a train has a length and a car has a horsepower (e.g. 300) and a fuel-economy rating
 ; (e.g. 28 miles/gallon).
 
-
 ;; -- Data Definitions
 
 ;; Vehicle is one of:
@@ -26,4 +25,3 @@
 (define-struct train (weight topspeed length))
 ;; Train is (make-train (Number Number Number))
 ;; interp. a train with weight top-speed and length
-

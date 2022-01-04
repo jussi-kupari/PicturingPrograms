@@ -14,7 +14,6 @@
 ; appears in the window and the location of the cursor. One good way to do
 ; this is to store two strings: the text before the cursor and the text after
 ; the cursor.
-
 (require picturing-programs)
 
 ;; -- Constants
@@ -65,20 +64,17 @@
     [(= (string-length ke) 1)  (make-txt (string-append (txt-pre tx) ke) (txt-post tx))]
     [else  tx]))
 
-
 ;; remove-last : String -> String
 ;; Given a string, produces the string without the last character
 
 (define (remove-last s)
   (substring s 0 (sub1 (string-length s))))
 
-
 ;; remove-first : String -> String
 ;; Given a string, produces the string without the first character
 
 (define (remove-first s)
   (substring s 1))
-
 
 ;; add-last-of-pre : Txt -> String
 ;; Given a Txt, produces the post-part with the last character of pre-part added at the start
@@ -87,13 +83,11 @@
   (string-append (string-ith (txt-pre tx) (sub1 (string-length (txt-pre tx))))
                  (txt-post tx)))
 
-
 ;; add-first-of-post : Txt -> String
 ;; Given a Txt, produces the pre-part with the first character of post-part added at the end
 
 (define (add-first-of-post tx)
   (string-append (txt-pre tx) (string-ith (txt-post tx) 0)))
-
 
 ;; render-text : Txt -> Image
 ;; Given Txt, produces an image of the text and cursor
@@ -108,4 +102,3 @@
 
 (define (render-editor tx)
   (place-image (render-txt tx) (/ (image-width SCENE) 2) (* (image-height SCENE) 0.375) SCENE))
-

@@ -17,13 +17,11 @@
 ;Dot
 (define DOT (circle 5 "solid" "red"))
 
-
 ;; -- Data Definition
 
 (define-struct dotcount (x y count))
 ;; DotCount is (make dotcount Number Number Natural)
 ;; interp. the (x,y) position of the dot and number of clicks done
-
 
 ;; -- Functions
 
@@ -42,7 +40,6 @@
                  (random (image-height SCENE))
                  (dotcount-count d)))
 
-
 ;; render-dot : Dot -> Image
 ;; Given a Dot, produces an image of the dot on the scene
 (check-expect (render-dot (make-dotcount 0 0 5)) (place-image DOT 0 0 SCENE))
@@ -50,10 +47,8 @@
 (define (render-dot d)
   (place-image DOT (dotcount-x d) (dotcount-y d) SCENE))
 
-
 ;; hit-the-dot : DotCount Number Number MouseEv -> DotCount or stop
 ;; Given a DotCount, mouse xy and mouse-event, new Dot or stop the animation
-
 
 (define (hit-the-dot d x y me)
   (cond
@@ -68,5 +63,3 @@
     [(mouse=? me "button-down")
      (make-dotcount (dotcount-x d) (dotcount-y d) (add1 (dotcount-count d)))]
     [else d]))
-
-

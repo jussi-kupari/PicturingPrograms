@@ -7,7 +7,6 @@
 ; (a common way of representing rectangles in computer graphics), and two numbers
 ; for the width and height.
 
-
 (define-struct placed-rect (corner width height))
 ;; Placed-rect is a (make placed-rect Posn Natural)
 ;; interp. a representation of a rectangle with the xy position of the “top-left corner”

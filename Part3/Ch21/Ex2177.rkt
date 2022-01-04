@@ -64,7 +64,6 @@
                     (dot-velx d)
                     (dot-vely d))]))
 
-
 ;; change-speed : Dot KeyEvent -> Dot
 ;; Given a Dot and a key-event, produces the next Dot
 (check-expect
@@ -81,7 +80,6 @@
  (make-dot (dot-x DOTT) (dot-y DOTT) (add1 (dot-velx DOTT)) (dot-vely DOTT)))
 (check-expect (change-speed DOTT " ") DOTT)
 
-
 (define (change-speed d ke)
   (cond
     [(key=? ke "up")
@@ -94,15 +92,11 @@
      (make-dot (dot-x d) (dot-y d) (add1 (dot-velx d)) (dot-vely d))]
     [else d]))
 
-
 ;; render-dot : Dot -> Image
 ;; Given Dot, produces an image of the Dot on the scene
 (check-expect
- (render-dot DOTT) (place-image DOT
-                                (/ (image-width SCENE) 2)
-                                (/ (image-height SCENE) 2)
-                                SCENE))
+ (render-dot DOTT)
+ (place-image DOT (/ (image-width SCENE) 2) (/ (image-height SCENE) 2) SCENE))
 
 (define (render-dot d)
   (place-image DOT (dot-x d) (dot-y d) SCENE))
-

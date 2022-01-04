@@ -5,7 +5,6 @@
 ; Define a structure to represent a person, with first and last
 ; names and age.
 
-
 (define-struct person (first last age))
 ;; Person is (make-person String String Natural)
 ;; interp. a person with first-name, last-name and age  

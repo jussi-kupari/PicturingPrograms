@@ -5,11 +5,9 @@
 ; Develop a function birthday that takes in a person struct and returns
 ; a person with the same first and last name, but one year older.
 
-
 (define-struct person (first last age))
 ;; Person is (make-person String String Natural)
 ;; interp. a persons information
-
 
 ;; bithday : Person -> Person
 ;; Given a person, updates the age to +1 year older

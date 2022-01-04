@@ -6,12 +6,9 @@
 ; structs and returns a person just like the first one, but with the
 ; last name changed to match the second one.
 
-
 (define-struct person (first last age))
 ;; Person is (make-person String String Natural)
 ;; interp. a persons information
-
-
 
 ;; change-name-to-match : Person Person -> Person
 ;; Given two persons, produces the first person with the last name of the second person

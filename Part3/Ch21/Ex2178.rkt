@@ -62,7 +62,6 @@
                     (* (dot-velx d) 0.99)
                     (* (dot-vely d) 0.99))]))
 
-
 ;; render-dot : Dot -> Image
 ;; Given Dot, produces an image of the Dot on the scene
 (check-expect
@@ -70,4 +69,3 @@
 
 (define (render-dot d)
   (place-image DOT (dot-x d) (dot-y d) SCENE))
-

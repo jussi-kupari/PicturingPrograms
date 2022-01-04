@@ -26,8 +26,6 @@
 ;Palette
 (define PALETTE (place-image/align PANELS 0 0 "left" "top" SCENE))
 
-
-
 ;; -- Data Definition
 
 (define-struct brushpalette (x y brush palette))
@@ -35,7 +33,6 @@
 ;; interp. a BrushPalette with x- and y-position of cursor, brush head and the current Palette-image
 
 (define BRUSH (make-brushpalette 100 100 (circle 0 "solid" "white") PALETTE))
-
 
 ;; -- Functions
 
@@ -46,7 +43,6 @@
     (check-with brushpalette?)
     (on-mouse use-brush)
     (to-draw render-palette)))
-
 
 ;; use-brush : BrushPalette Number Number MouseEv -> BrushPalette
 ;; Given BP, xy-coordinates of mouse and mouse-event, produces next BrushPalette
@@ -82,7 +78,6 @@
     [else
      (make-brushpalette x y (brushpalette-brush bp) (brushpalette-palette bp))]))
 
-
 ;; update-palette : BrushPalette Number Number -> Image
 ;; Given BP and xy-coordinates, update BP to have correct palette
 (check-expect
@@ -95,7 +90,6 @@
    x y
    (brushpalette-palette bp)))
 
-
 ;; in-red? : Number Number -> Boolean
 ;; Given xy-coordinates, produces true if they are in the red zone
 (check-expect (in-red? 30 50) true)
@@ -106,7 +100,6 @@
 
 (define (in-red? x y)
   (and (<= 0 x 50) (<= 0 y 50)))
-
 
 ;; in-green? : Number Number -> Boolean
 ;; Given xy-coordinates, produces true if they are in the green zone
@@ -119,7 +112,6 @@
 (define (in-green? x y)
   (and (<= 0 x 50) (< 50 y 100)))
 
-
 ;; in-blue? : Number Number -> Boolean
 ;; Given xy-coordinates, produces true if they are in the blue zone
 (check-expect (in-blue? 30 101) true)
@@ -131,7 +123,6 @@
 
 (define (in-blue? x y)
   (and (<= 0 x 50) (< 100 y 150)))
-
 
 ;; in-white? : Number Number -> Boolean
 ;; Given xy-coordinates, produces true if they are in the white zone
@@ -147,7 +138,6 @@
 (define (in-white? x y)
   (and (<= 0 x 50) (< 150 y 200)))
 
-
 ;; render-palette : BrushPalette -> Image
 ;; Given BrushPalette, renders an image of the current palette
 (check-expect
@@ -159,23 +149,3 @@
                (brushpalette-x bp)
                (brushpalette-y bp)
                (brushpalette-palette bp)))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

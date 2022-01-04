@@ -4,7 +4,6 @@
 ; Exercise 21.4.6
 ; Develop a function same-team? that takes in two basketball-player
 ; structs and tells whether they play for the same team.
-
 (require picturing-programs)
 
 ;; -- Data Definition
@@ -12,7 +11,6 @@
 (define-struct player (name team number))
 ;; Player is (make-player String String Natural)
 ;; interp. a basketball player
-
 
 ;; -- Functions
 

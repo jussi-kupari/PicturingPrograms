@@ -70,7 +70,6 @@ to decide whether it should bounce in the y dimension.|#
                     (dot-velx d)
                     (dot-vely d))]))
 
-
 ;; render-dot : Dot -> Image
 ;; Given Dot, produces an image of the Dot on the scene
 (check-expect
@@ -78,4 +77,3 @@ to decide whether it should bounce in the y dimension.|#
 
 (define (render-dot d)
   (place-image DOT (dot-x d) (dot-y d) SCENE))
-

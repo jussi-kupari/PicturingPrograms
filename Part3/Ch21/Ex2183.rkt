@@ -6,13 +6,11 @@
 ; whether the posn is inside the shape. Consider the shape to include its
 ; border, so a point exactly on the border is “contained” in the shape.
 
-
 ;; -- Data Definitions
 
 (define-struct placed-circ (center radius))
 ;; Placed-circ is a (make placed-circ Posn Natural)
 ;; interp. a representation of a circle with the xy position of the center and radius
-
 
 (define-struct placed-rect (corner width height))
 ;; Placed-rect is a (make placed-rect Posn Natural)
@@ -22,7 +20,6 @@
 ;; Placed-shape is one of:
 ;; - Placed-circ
 ;; - Placed-rect
-
 
 ;; -- Functions
 
@@ -37,12 +34,10 @@
 (check-expect
  (contains? (make-placed-rect (make-posn 0 0) 5 5) (make-posn 10 10)) false)
 
-
 (define (contains? ps pos)
   (cond
     [(placed-circ? ps) (pos-inside-circ? pos ps)]
     [(placed-rect? ps) (pos-inside-rect? pos ps)]))
-
 
 ;; pos-inside-circ? : Posn Placed-circ -> Boolean
 ;; Given a position and a placed-circ, produces true if the position is inside the circle
@@ -53,10 +48,8 @@
 (check-expect
  (pos-inside-circ? (make-posn 5 50) (make-placed-circ (make-posn 25 25) 25)) false)
 
-
 (define (pos-inside-circ? pos pc)
   (<= (dist-from-center pos pc) (placed-circ-radius pc)))
-
 
 ;; dist-from-center : Posn Placed-circ -> Number
 ;; Given a position and a placed-circle, produces the distance of the pos from circle center
@@ -67,7 +60,6 @@
   (sqrt
    (+ (sqr (- (posn-x pos) (posn-x (placed-circ-center pc))))
       (sqr (- (posn-y pos) (posn-y (placed-circ-center pc)))))))
-
 
 ;; pos-inside-rckt? : Posn Placed-rect -> Boolean
 ;; Given a position and a placed-rect, produces true if the position is inside the rectangle

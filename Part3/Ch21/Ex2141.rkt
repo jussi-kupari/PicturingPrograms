@@ -5,11 +5,9 @@
 ; 21.4.1 Define a function that takes in an employee (from Exercise 21.2.1)
 ; and tells whether or not the employee earns over $100,000 per year.
 
-
 (define-struct employee (name id salary))
 ;; Empoyee is (make-employee String Natural Number)
 ;; interp. Employee information with name, ID-number and salary
-
 
 ;; more-than-100k? : Employee -> Boolean
 ;; Given employee, produces true if mothly salary yields over 100,000$ in a year

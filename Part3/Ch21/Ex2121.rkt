@@ -6,7 +6,6 @@
 ; including the employee’s name (we won’t bother with first and last names), ID number,
 ; and salary.
 
-
 (define-struct employee (name id salary))
 ;; Empoyee is (make-employee String Natural Number)
 ;; interp. Employee information with name, ID-number and salary  
@@ -23,7 +22,6 @@
 (check-expect (employee? emp1) true)
 (check-expect (employee? "Mary") false)
 
-
 #;
 (define (fn-for-employee b)
   (... (employee-name b)     ;String
@@ -32,7 +30,6 @@
 
 ;; Template rules used:
 ;;  - compound: 3 fields
-
 
 ;; The input template is
 #|

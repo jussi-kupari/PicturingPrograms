@@ -10,13 +10,11 @@
 ; function on placed-shapes and the “circle and rectangle” cases will require some
 ; geometrical thinking.
 
-
 ;; -- Data Definitions
 
 (define-struct placed-circ (center radius))
 ;; Placed-circ is a (make placed-circ Posn Natural)
 ;; interp. a representation of a circle with the xy position of the center and radius
-
 
 (define-struct placed-rect (corner width height))
 ;; Placed-rect is a (make placed-rect Posn Natural)
@@ -26,7 +24,6 @@
 ;; Placed-shape is one of:
 ;; - Placed-circ
 ;; - Placed-rect
-
 
 ;; -- Functions
 
@@ -45,7 +42,6 @@
     [(and (placed-rect? ps1) (placed-rect? ps2)) (rects-overlap? ps1 ps2)]        
     [(and (placed-circ? ps1) (placed-rect? ps2)) (circ-rect-overlap? ps1 ps2)]    
     [(and (placed-rect? ps1) (placed-circ? ps2)) (circ-rect-overlap? ps2 ps1)]))  
-
 
 ;; rects-overlap? : Placed-rect Placed-rect -> Boolean?
 ;; Given two placed-rects, produces true if they overlap
@@ -68,7 +64,6 @@
 (define (rects-overlap? pr1 pr2)
   (and (x-overlap-rect? pr1 pr2)
        (y-overlap-rect? pr1 pr2)))
-
 
 ;; x-overlap-rect? : Placed-rect Placed-rect -> Boolean
 ;; Given two placed-rects, produces true if the x-sides have overlap
@@ -124,7 +119,6 @@
     (+ (posn-x (placed-rect-corner pr1)) (/ (placed-rect-width pr1) 2))
     (+ (posn-x (placed-rect-corner pr2)) (/ (placed-rect-width pr2) 2)))))
 
-
 ;; y-center-dist-rect : Placed-rect Placed-rect -> Number
 ;; Given two placed-rects, produces the absolute distance between the y-side centers
 (check-expect
@@ -142,7 +136,6 @@
    (-
     (+ (posn-y (placed-rect-corner pr1)) (/ (placed-rect-height pr1) 2))
     (+ (posn-y (placed-rect-corner pr2)) (/ (placed-rect-height pr2) 2)))))
-
  
 ;; circs-overlap? : Placed-circ Placed-circ -> Boolean?
 ;; Given two placed-circles, produces true if the circles overlap
@@ -154,7 +147,6 @@
 (define (circs-overlap? c1 c2)
   (< (center-distance-circ c1 c2)
      (+ (placed-circ-radius c1) (placed-circ-radius c2))))
-
 
 ;; center-distance-circ : Placed-circle Placed-circle -> Number
 ;; Given two place-circles, produces the distance between the centers
@@ -168,7 +160,6 @@
    (+ (sqr (distance-x-circ c1 c2))
       (sqr (distance-y-circ c1 c2)))))
 
-
 ;; distance-x-circ : Placed-circle Placed-circle -> Number
 ;; Given two placed-circles, produces the distance between the x-coordinates
 (check-expect (distance-x-circ (make-placed-circ (make-posn 0 0) 10)
@@ -179,7 +170,6 @@
 (define (distance-x-circ c1 c2)
   (- (posn-x (placed-circ-center c1))
      (posn-x (placed-circ-center c2))))
-
 
 ;; distance-y-circ : Placed-circle Placed-circle -> Number
 ;; Given two placed-circles, produces the distance between the y-coordinates
@@ -192,7 +182,6 @@
 (define (distance-y-circ c1 c2)
   (- (posn-y (placed-circ-center c1))
      (posn-y (placed-circ-center c2))))
-
 
 ;; circ-rect-overlap? : Placed-circle Placed-rect -> Boolean
 ;; Given placed-circle and placed-rect, produces true if the shapes overlap
@@ -213,7 +202,6 @@
   (and
    (x-overlap-circ-rect? pc pr)
    (y-overlap-circ-rect? pc pr)))
-
 
 ;; x-overlap-circ-rect? : Placed-circle Placed-rect -> Boolean
 ;; Given placed-circle and placed-rect, produces true if the x-dimensions overlap
@@ -250,7 +238,6 @@
   (< (y-dist-circ-rect pc pr)
      (+ (placed-circ-radius pc)
         (/ (placed-rect-height pr) 2))))
-
 
 ;; x-dist-circ-rect : Placed-circle Placed-rect -> Number
 ;; Given placed-circle and placed-rect, produces the distance between x-dimension centers

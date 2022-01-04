@@ -5,14 +5,11 @@
 ; Choose a function you’ve already written that operates on posn, and
 ; rewrite it to operate on a my-posn instead.
 
-
 ; Worked Exercise 20.6.1
 ; Write an animation of a picture that moves up, down, left,
 ; and right in response to the "up", "down", "left", and "right" arrow keys.
 ; It should ignore all other keys.
-
 (require picturing-programs)
-
 
 ;; -- Data Definition
 
@@ -28,12 +25,10 @@
 ;Dot
 (define DOT (circle 5 "solid" "red"))
 
-
 ;; -- Data Definition
 
 ;; Dot is a posn
 ;; interp. the x,y coordinates of a red dot on the scene
-
 
 ;; -- Functions
 

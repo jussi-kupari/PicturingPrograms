@@ -5,7 +5,6 @@
 ; Develop a function full-name that takes in a person struct and returns
 ; a single string containing the person’s first and last names, separated by a space.
 
-
 (define-struct person (first last age))
 ;; Person is (make-person String String Natural)
 ;; interp. a persons information
@@ -20,7 +19,6 @@
 ; Exercise 21.4.8
 ; Develop a function rect-area that takes in a rect struct and returns
 ; the area of the rectangle (i.e. length times width).
-
 
 (define-struct rektangle (length width))
 ;; Rektangle is (make-rektangle Natural Natural)
@@ -42,7 +40,6 @@
 ; two parameters; for the other, you’ll need to copy the inventory again and change the
 ; parameter name.
 
-
 ;; larger-rect? : Rektangle Rektangle -> Boolean
 ;; Given two rectangles, produces true if the first is larger
 (check-expect (larger-rect? (make-rektangle 10 10) (make-rektangle 10 10)) false)
@@ -52,11 +49,9 @@
 (define (larger-rect? r1 r2)
   (> (rect-area r1) (rect-area r2)))
 
-
 ; Exercise 21.4.10
 ; Develop a function seconds-since-midnight that takes in a time-
 ; of-day struct and returns how many seconds it has been since midnight.
-
 
 (define-struct time (hour minute second))
 ;; Time is (make-time Natural[0, 23] Natural[0, 59] Natural[0, 59])
@@ -73,12 +68,10 @@
      (* (time-minute t) 60)
      (time-second t)))
 
-
 ; Exercise 21.4.11
 ; Develop a function seconds-between that takes in two time-of-day
 ; structs and returns the difference between them, in seconds.
 ; Hint: For example, the time 11:01:14 is 124 seconds after the time 10:59:10.
-
 
 ;; seconds-between : Time Time -> Natural
 ;; Given two times, produces the time passed (t1->t2) in seconds
@@ -92,8 +85,6 @@
   (- (seconds-since-midnight t2)
      (seconds-since-midnight t1)))
 
-
-
 ; Exercise 21.4.12
 ; Develop a function named who-won that takes in three candidate struc-
 ; tures (from Exercise 21.3.3) and returns the name of the one with the most votes,
@@ -102,11 +93,9 @@
 ; that the candidates’ names are always “Anne”, “Bob”, and “Charlie”; it’ll work
 ; with any names.
 
-
 (define-struct candidate (name votes))
 ;; Candidate is (make-candidate String Natural)
 ;; interp. a candidate in an election
-
 
 ;; who-won : Candidate Candidate Candidate -> String
 ;; Given three candidates
@@ -122,7 +111,6 @@
                        (make-candidate "joe" 10)
                        (make-candidate "jill" 10)) "tie")
 
-
 (define (who-won c1 c2 c3)
   (cond[(and (> (candidate-votes c1) (candidate-votes c2))
              (> (candidate-votes c1) (candidate-votes c3)))
@@ -133,14 +121,4 @@
        [(and (> (candidate-votes c3) (candidate-votes c1))
              (> (candidate-votes c3) (candidate-votes c2)))
         (candidate-name c3)]
-       [else
-        "tie"]))
-
-
-
-
-
-
-
-
-
+       [else "tie"]))

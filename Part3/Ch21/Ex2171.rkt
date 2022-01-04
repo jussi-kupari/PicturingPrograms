@@ -14,7 +14,6 @@
 ; (If you did Exercise 21.6.3 using a nested struct, try it with three fields instead.
 ; Is the code shorter or longer? Easier or harder to understand?)
 
-
 (require picturing-programs)
 
 ;; -- Constants
@@ -25,13 +24,11 @@
 ;Dot
 (define DOT (circle 5 "solid" "red"))
 
-
 ;; -- Data Definition
 
 (define-struct dotcount (posn count))
 ;; DotCount is (make dotcount (make-posn Number Number) Number Natural)
 ;; interp. the (x,y) position of the dot and number of clicks done
-
 
 ;; -- Functions
 
@@ -50,7 +47,6 @@
                             (random (image-height SCENE)))
                  (dotcount-count d)))
 
-
 ;; render-dot : Dot -> Image
 ;; Given a Dot, produces an image of the dot on the scene
 (check-expect (render-dot (make-dotcount (make-posn 0 0) 5)) (place-image DOT 0 0 SCENE))
@@ -58,10 +54,8 @@
 (define (render-dot d)
   (place-image DOT (posn-x (dotcount-posn d)) (posn-y (dotcount-posn d)) SCENE))
 
-
 ;; hit-the-dot : DotCount Number Number MouseEv -> DotCount or stop
 ;; Given a DotCount, mouse xy and mouse-event, new Dot or stop the animation
-
 
 (define (hit-the-dot d x y me)
   (cond
@@ -79,6 +73,3 @@
                  (posn-y (dotcount-posn d)))
       (add1 (dotcount-count d)))]
     [else d]))
-
-
-

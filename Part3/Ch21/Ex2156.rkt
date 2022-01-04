@@ -5,11 +5,9 @@
 ; Develop a function add-a-vote that takes in a candidate structure and
 ; adds one to his/her vote count.
 
-
 (define-struct candidate (name votes))
 ;; Candidate is (make-candidate String Natural)
 ;; interp. a candidate in an election
-
 
 ;; add-a-vote : Candidate -> Candidate
 ;; Given a candidate, adds one vote to his/her votes
@@ -20,4 +18,3 @@
 (define (add-a-vote cand)
   (make-candidate (candidate-name cand)
                   (add1 (candidate-votes cand))))
-

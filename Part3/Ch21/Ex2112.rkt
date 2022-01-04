@@ -9,6 +9,3 @@
 ; ;; interp. a color with RGB values  
 ; 
 ; (define red (make-color 255 0 0))
-; 
-; 
-; 

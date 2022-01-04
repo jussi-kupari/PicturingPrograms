@@ -6,7 +6,6 @@
 ; returns whether the animal in question is underweight. For this particular kind of monkey,
 ; that means under 10 kg, for lions, 150 kg, for sloths, it’s 30 kg, for dolphins, 50 kg.
 
-
 ; Exercise 21.8.6
 ; Define a data type zoo-animal which is either a monkey, a lion, a
 ; sloth, or a dolphin. All four kinds have a name and a weight. Lions have a numeric
@@ -14,9 +13,7 @@
 ; a string property indicating their favorite food (e.g. “ants”, “bananas”, or “caviar”).
 ; Sloths have a Boolean property indicating whether they’re awake.
 
-
 ;; -- Data Definitions
-
 
 (define-struct monkey (name weight favfood))
 ;; Monkey is a (make-monkey String Number Number)
@@ -40,7 +37,6 @@
 ;; - sloth
 ;; - dolphin
 
-
 ;; -- Functions
 
 ;;  underweight? : Zoo-animal -> Boolean
@@ -60,7 +56,3 @@
     [(lion? za) (< (lion-weight za) 150)]
     [(sloth? za) (< (sloth-weight za) 30)]
     [(dolphin? za) (< (dolphin-weight za) 50)]))
-
-
-
- 

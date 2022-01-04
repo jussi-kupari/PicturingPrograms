@@ -8,9 +8,7 @@
 ; a string property indicating their favorite food (e.g. “ants”, “bananas”, or “caviar”).
 ; Sloths have a Boolean property indicating whether they’re awake.
 
-
 ;; -- Data Definitions
-
 
 (define-struct monkey (name weight favfood))
 ;; Monkey is a (make-monkey String Number Number)
@@ -33,9 +31,3 @@
 ;; - lion
 ;; - sloth
 ;; - dolphin
-
-
-
-
-
-

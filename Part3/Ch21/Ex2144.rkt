@@ -4,7 +4,6 @@
 ; Exercise 21.4.4
 ; Develop a function older? that takes in two person structs and tells
 ; whether the first is older than the second.
-
 (require picturing-programs)
 
 ;; -- Data Definition

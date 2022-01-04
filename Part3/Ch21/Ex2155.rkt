@@ -6,11 +6,9 @@
 ; and a number, and produces a copy of the employee with the specified percentage
 ; increase in salary.
 
-
 (define-struct employee (name id salary))
 ;; Empoyee is (make-employee String Natural Number)
 ;; interp. Employee information with name, ID-number and salary  
-
 
 ;; raise-salary-percent : Employee Number -> Employee
 ;; Given an employee and a percentage, increases the salary by that percentage

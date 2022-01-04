@@ -8,7 +8,6 @@
 ; a placed-shape and two numbers dx and dy, and returns another placed-shape just like the given
 ; one but moved by dx in the x dimension and dy in the y dimension.
 
-
 ;; -- Data Definitions
 
 (define-struct placed-circ (center radius))
@@ -17,7 +16,6 @@
 
 ;; example
 (define CIRCLE1 (make-placed-circ (make-posn 50 50) 30))
-
 
 (define-struct placed-rect (corner width height))
 ;; Placed-rect is a (make placed-rect Posn Natural)
@@ -43,7 +41,6 @@
       (* 2 pi (placed-circ-radius ps))
       (* (+ (placed-rect-width ps) (placed-rect-height ps)) 2)))
 
-
 ;; move-shape : Placed-shape Number Number -> Placed-shape
 ;; Given a placed-shape and dx dy, produces a new placed-shape moved dx and dy in the coordinates
 (check-expect (move-shape CIRCLE1 0 0) CIRCLE1)
@@ -58,7 +55,6 @@
     [(placed-circ? ps) (move-circle ps dx dy)]
     [else (move-rect ps dx dy)]))
 
-
 ;; move-circle : Placed-circ Number Number -> Placed-circ
 ;; Given a placed-circle and dx dy, produces a new placed-circle moved dx and dy in the coordinates
 (check-expect
@@ -70,7 +66,6 @@
    (make-posn (+ dx (posn-x (placed-circ-center pc)))
               (+ dy (posn-y (placed-circ-center pc))))
    (placed-circ-radius pc)))
-
 
 ;; move-rect : Placed-rect Number Number -> Placed-rect
 ;; Given a placed-rect and dx dy, produces a new placed-rect moved dx and dy in the coordinates

@@ -28,9 +28,7 @@
 ;Scheme-logo
 (define LOGO pic:scheme-logo)
 
-
 ;; -- Data Definition
-
 
 (define-struct world (scene pos))
 ;; World is (make-world Image (make-posn Number Number)
@@ -42,8 +40,6 @@
    (make-posn (/ (image-width SCENE) 2)
               (/ (image-height SCENE) 2))))
 
-
-
 ;; -- Functions
 
 ;; main : World -> World
@@ -53,8 +49,6 @@
     (check-with world?)
     (on-mouse next-world)
     (to-draw render-world)))
-
-
 
 ;; next-world : World MouseEvent -> World
 ;; Given World and mouse-event, produce next world
@@ -73,8 +67,6 @@
     [else
      (make-world (world-scene w) (make-posn x y))]))
 
-
-
 ;; render-world : World -> Image
 ;; Given World, produces and image of world-scene with logo at the cursor position
 (check-expect (render-world WORLD) (place-image LOGO 100 100 SCENE))
@@ -84,19 +76,3 @@
                (posn-x (world-pos w))
                (posn-y (world-pos w))
                (world-scene w)))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

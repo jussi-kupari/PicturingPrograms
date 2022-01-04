@@ -5,13 +5,11 @@
 ; Define a function change-salary that takes in an employee
 ; (from Exercise 21.2.1) and a number, and produces a new employee just like the old one
 ; but with the salary changed to the specified number.
-
 (require picturing-programs)
 
 (define-struct employee (name id salary))
 ;; Empoyee is (make-employee String Natural Number)
 ;; interp. Employee information with name, ID-number and salary  
-
 
 ;; change-salary : Employee Number -> Employee
 ;; Given Employee and a Salary, produces the employee-ifo with the new salary

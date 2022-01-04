@@ -11,7 +11,6 @@
 ;; Cd is (make-cd (String String Natural Natural)
 ;; interp. a representation of a CD-record
 
-
 ;; rec-before-1980? : Cd -> Boolean
 ;; Given a Cd, produces true if recorded before 1980
 (check-expect (rec-before-1980? (make-cd "Distintegration" "The Cure" 1989 12)) false)

@@ -11,7 +11,6 @@
 
 ;; An animation of a dot moving across the screen with user input
 
-
 ;; -- Constants
 
 ;Scene
@@ -20,7 +19,6 @@
 ;Dot
 (define DOT (circle 5 "solid" "red"))
 
-
 ;; -- Data Definition
 
 (define-struct dot (pos vel))
@@ -28,7 +26,6 @@
 ;; interp. the position and velocity (speed and direction) of the dot
 
 (define DOT1 (make-dot 79 -2)) ; Dot at position 79 moving left at the speed of 2
-
 
 ;; -- Functions
 
@@ -40,7 +37,6 @@
     (on-key change-direction)
     (to-draw render-dot)))
 
-
 ;; next-dot : Dot -> Dot
 ;; Given Dot, produces the next Dot based on position and velocity
 (check-expect (next-dot (make-dot 50 2)) (make-dot 52 2))
@@ -49,7 +45,6 @@
 (define (next-dot d)
   (make-dot (+ (dot-pos d)(dot-vel d))
             (dot-vel d)))
-
 
 ;; change-direction : Dot KeyEvent -> Dot
 ;; Given a Dot and a key-event, changes the direction or speed of movement of the dot
@@ -66,13 +61,8 @@
      (make-dot (dot-pos d) (* (dot-vel d) -1))]
     [else d]))
 
-
 ;; render-dot : Dot -> Image
 ;; Given Dot, produces the image of dot on the scene
 
 (define (render-dot d)
   (place-image DOT (dot-pos d) (/ (image-height SCENE) 2) SCENE))
-
-
-
-
