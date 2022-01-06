@@ -25,6 +25,8 @@ Hint: Perhaps surprisingly, this problem is easier than substring?.|#
 
 ;; -- Functions
 
+; == substring method ==
+
 ;; subsequence? : String String -> Boolean
 ;; Given two strings, produces true if the characters
 ;; of the first appear in the same order in the second
@@ -46,5 +48,35 @@ Hint: Perhaps surprisingly, this problem is easier than substring?.|#
     [(zero? (string-length s1)) true]
     [else
      (if (equal? (substring s1 0 1) (substring s2 0 1))
-              (subsequence? (substring s1 1) (substring s2 1))
-              (subsequence? s1 (substring s2 1)))]))
+         (subsequence? (substring s1 1) (substring s2 1))
+         (subsequence? s1 (substring s2 1)))]))
+
+; == string->list method
+
+;; subsequence.v2? : String String -> Boolean
+;; Given two strings, produces true if the characters
+;; of the first appear in the same order in the second
+(check-expect (subsequence.v2? "bob" "") false)
+(check-expect (subsequence.v2? "" "bob") true)
+(check-expect (subsequence.v2? "b" "bob") true)
+(check-expect (subsequence.v2? "c" "bob") false)
+(check-expect (subsequence.v2? "bob" "bob") true)
+(check-expect (subsequence.v2? "bob" "bobs") true)
+(check-expect (subsequence.v2? "bob" "brats and snobs") true)
+(check-expect (subsequence.v2? "no rat" "brats and snobs") false)
+(check-expect (subsequence.v2? "bob" "thingbobs") true)
+(check-expect (subsequence.v2? "bob" "I botched it but bob fixed it") true)
+(check-expect (subsequence.v2? "bob" "I botched it but amy fixed it") true)
+
+(define (subsequence.v2? s1 s2)
+  (cond
+    [(< (length (string->list s2)) (length (string->list s1))) false]
+    [(zero? (length (string->list s1))) true]
+    [else
+     (if (char=? (first (string->list s1)) (first (string->list s2)))
+         (subsequence.v2?
+          (list->string (rest (string->list s1)))
+          (list->string(rest (string->list s2))))
+         (subsequence.v2?
+          s1
+          (list->string(rest (string->list s2)))))]))

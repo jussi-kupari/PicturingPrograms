@@ -17,13 +17,13 @@ Not the most elegant solution.|#
 ;; count-words : String -> Natural
 ;; Given a string, produces the number of fully alphabetic words in it.
 (check-error
- (count-words "") "Can't count words in an empty string!")
+ (count-words "") "count-words: Can't count words in an empty string!")
 (check-expect
  (count-words "A “word” is a sequence of letters") 7)
 
 (define (count-words str)
   (cond
-    [(zero? (string-length str)) (error "Can't count words in an empty string!")]
+    [(zero? (string-length str)) (error 'count-words "Can't count words in an empty string!")]
     [(last-char-alphabetic? str)
      (add1 (count-words-in-nelos (string->list str)))]
     [else (count-words-in-nelos (string->list str))]))

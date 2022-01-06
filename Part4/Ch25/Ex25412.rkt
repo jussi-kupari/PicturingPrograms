@@ -18,11 +18,11 @@ true)
 (check-expect (substring? "bob" "I botched it but amy fixed it")
 false)
 (There is a function in some dialects of Racket that does this job, but I want you to
-do it using only char=?, comparing one character at a time.)
-
-I didn't use char=?, but substring (string type)|#
+do it using only char=?, comparing one character at a time.)|#
 
 ;; -- Functions
+
+; == substring method ==
 
 ;; substring? : String String -> Boolean
 ;; Given two strings, produces true if the first is a substring of the second.
@@ -68,4 +68,53 @@ I didn't use char=?, but substring (string type)|#
     [else
      (if (equal? (substring s1 0 1) (substring s2 0 1))
          (found? (substring s1 1) (substring s2 1))
+         false)]))
+
+; == string->list method ==
+
+;; substring.v2? : String String -> Boolean
+;; Given two strings, produces true if the first is a substring of the second.
+(check-expect (substring.v2? "abc" "") false)
+(check-expect (substring.v2? "abc" "ab") false)
+(check-expect (substring.v2? "abc" "bcde") false)
+(check-expect (substring.v2? "abc" "abc") true)
+(check-expect (substring.v2? "abc" "abcdef") true)
+(check-expect (substring.v2? "abc" "fghabdef") false)
+(check-expect (substring.v2? "abc" "jsghfsdajpqwieudflkjwecghasdflöaerkhabcuyerw") true)
+(check-expect (substring.v2? "bob" "") false)
+(check-expect (substring.v2? "" "bob") true)
+(check-expect (substring.v2? "b" "bob") true)
+(check-expect (substring.v2? "c" "bob") false)
+(check-expect (substring.v2? "bob" "bob") true)
+(check-expect (substring.v2? "bob" "bobs") true)
+(check-expect (substring.v2? "bob" "brats and snobs") false)
+(check-expect (substring.v2? "no rat" "brats and snobs") false)
+(check-expect (substring.v2? "bob" "thingbobs") true)
+(check-expect (substring.v2? "bob" "I botched it but bob fixed it") true)
+(check-expect (substring.v2? "bob" "I botched it but amy fixed it") false)
+
+(define (substring.v2? s1 s2)
+  (cond
+    [(< (length (string->list s2)) (length (string->list s1))) false]
+    [else
+     (if (found.v2? s1 s2)
+         true
+         (substring.v2? s1 (list->string(rest (string->list s2)))))]))
+
+;; found.v2? : String String -> Boolean
+;; Given two strings, produces true if the first is found at the start of the second.
+(check-expect (found.v2? "abc" "") false)
+(check-expect (found.v2? "abc" "ab") false)
+(check-expect (found.v2? "abc" "bcde") false)
+(check-expect (found.v2? "abc" "abc") true)
+(check-expect (found.v2? "abc" "abcdef") true)
+
+(define (found.v2? s1 s2)
+  (cond
+    [(< (length (string->list s2)) (length (string->list s1))) false]
+    [(zero? (length (string->list s1))) true]
+    [else
+     (if (char=? (first (string->list s1)) (first (string->list s2)))
+         (found.v2? (list->string (rest (string->list s1)))
+                    (list->string(rest (string->list s2))))
          false)]))
