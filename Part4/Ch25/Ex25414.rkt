@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname Ex25414) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname Ex25414) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #t)))
 #|Exercise 25.4.14 Develop a function lcsubstring (“longest common substring”) that
 takes in two strings and returns the longest string which is a substring of both of them.
 For example,
@@ -15,20 +15,36 @@ My first attempt took several minutes to solve the
 A different approach, using only things that you’ve seen already, solved the same problem
 in 0.01 seconds; the difference is even more dramatic for longer strings.
 
-Note: This is my first take on this and could be quite an overcomplicated solution;
-however, it is decently fast:
+Note: This is a first take on this and is probably horribly inefficient;
+however, it manages the book example in a similar time:
 (time (lcsubstring "mickey mouse" "minnie mush"))
 ==> cpu time: 0 real time: 0 gc time: 0 "mi"
 
-; Random snippet from HackerNews
+; This random snippet from HackerNews; however, already takes 35 seconds (good, bad, average?)
 (time (lcsubstring
-"The commenters here seem to take for granted that this cookie law is a good thing and Google/Facebook are evil villains, but there is a difference between a law and a good/just/reasonable law. I would argue interrupting the experience and wasting billions of peoples time clicking on cookie banners is also a form of harm. That’s certainly been my perception as an end user under this policy. I don’t work in ad tech and have no financial stake in this, I’m just sick to death of these fucking cookie popups."
+"The commenters here seem to take for granted that this cookie law is a good thing and
+Google/Facebook are evil villains, but there is a difference between a law and a good/just/reasonable
+law. I would argue interrupting the experience and wasting billions of peoples time clicking on cookie
+ banners is also a form of harm. That’s certainly been my perception as an end user under this policy.
+ I don’t work in ad tech and have no financial stake in this, I’m just sick to death of these fucking
+ cookie popups."
 
-"I would argue that when it comes to developing software, usually the one with the most leverage is the worker who develops it. If she says no, then it doesn't get developed. Maybe in team environments it's a bit trickier when you're looking at a feature as a whole, but each individual has full leverage over the code they produce. That they don't have leverage over the decision-making process seems like a cop out."))
-
-cpu time: 37859 real time: 38647 gc time: 5312
+"I would argue that when it comes to developing software, usually the one with the most leverage is
+the worker who develops it. If she says no, then it doesn't get developed. Maybe in team environments
+it's a bit trickier when you're looking at a feature as a whole, but each individual has full leverage
+over the code they produce. That they don't have leverage over the decision-making process seems like
+a cop out."))
+cpu time: 34890 real time: 35242 gc time: 3375
 "I would argue "
 |#
+
+;; -- Data Definitions
+
+;; List-of-String (LOS) is one of:
+;; - empty
+;; - (cons String LOS)
+
+;; -- Functions
 
 ;; lcsubstring : String String -> String
 ;; Given two strings, produces the longest common substring
