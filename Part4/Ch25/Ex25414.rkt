@@ -15,7 +15,7 @@ My first attempt took several minutes to solve the
 A different approach, using only things that you’ve seen already, solved the same problem
 in 0.01 seconds; the difference is even more dramatic for longer strings.
 
-Note: This is my first take on this and could be quite overcomplicated solution;
+Note: This is my first take on this and could be quite an overcomplicated solution;
 however, it is decently fast:
 (time (lcsubstring "mickey mouse" "minnie mush"))
 ==> cpu time: 0 real time: 0 gc time: 0 "mi"
