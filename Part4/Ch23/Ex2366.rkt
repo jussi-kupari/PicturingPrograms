@@ -4,4 +4,7 @@
 #|Exercise 23.6.6
 Modify the scramble-word function so that, even if there are repeated
 characters in the string, the result won’t contain the same word twice: (scramble-word
-"foo") might produce (list "foo" "ofo" "oof").|#
+"foo") might produce (list "foo" "ofo" "oof").
+
+I implemented this in the solution to the previous exercise (23.6.5)
+|#
