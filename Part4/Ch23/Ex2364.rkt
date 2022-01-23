@@ -33,7 +33,7 @@ the 'empty' - when using the different annotation types ('list' and 'cons').
 
 ;; List-of-LOA (LOLOA) is one of:
 ;; - empty
-;; - (cons LOA empty)
+;; - (cons LOA LOLOA)
 
 ;; -- Functions
 
