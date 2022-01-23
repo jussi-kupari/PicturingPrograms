@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname Ex2365_UNSOLVED) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #t)))
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname Ex2365) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #t)))
 #|Exercise 23.6.5
 Develop a function scramble-word that takes in a string and returns
 a list of strings representing all possible orderings of the characters in the string.
@@ -19,6 +19,14 @@ Hint: Re-use functions you’ve already written!|#
 ;; List-of-LOA (LOLOA) is one of:
 ;; - empty
 ;; - (cons LOA LOLOA)
+
+;; List-of-Chars (LOCH) is one of:
+;; - empty
+;; - (cons Char LOCH)
+
+;; List-of-LOCH (LOLOCH) is one of:
+;; - empty
+;; - (cons LOCH LOLOCH)
 
 ;; -- Functions
 
