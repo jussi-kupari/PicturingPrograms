@@ -18,10 +18,6 @@ dynamic programming or memoization, which we’ll discuss in Chapter 30, enabled
 do it in about 0.01 seconds.Again, the difference is more dramatic for longer strings.
 |#
 
-#|
-The key is to come up with a function that creates a list of all the subsequences of a given string.
-|#
-
 ;; -- Data Definitions
 
 ;; List-of-Strings (LOS) is one of:
@@ -35,7 +31,7 @@ The key is to come up with a function that creates a list of all the subsequence
 ;; -- Functions
 
 ;; lcsubsequence : String String -> String
-;; Given two strings, produces the longes string that is a subsequence of both
+;; Given two strings, produces the longest string that is a subsequence of both
 (check-expect (lcsubsequence "mickey mouse" "minnie moose") "mie mose")
 
 (define (lcsubsequence s1 s2)
