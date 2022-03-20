@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname Ex25416_WOP) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #t)))
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname Ex25416) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #t)))
 #|Exercise 25.4.16
 A common task in computer science is pattern-matching: given a
 pattern, ask whether a particular string matches it. In our pattern language, a "?" stands
@@ -57,7 +57,7 @@ pattern; if they appear in the target, they should be treated as ordinary charac
     [else false]))
 
 ;; skip-to-next-match : String1 String -> String
-;; Given a String1 and a string, produces a substring of the second starting from the first match
+;; Given String1 and string, produces a substring of the second starting from the first match
 (check-expect (skip-to-next-match "d" "abcbadef") "def")
 
 (define (skip-to-next-match s1 s2)
@@ -74,7 +74,7 @@ pattern; if they appear in the target, they should be treated as ordinary charac
   (and (zero? (string-length s1)) (zero? (string-length s2))))
 
 ;; pattern-only-star? : String -> Boolean
-;; Given a string, produces true if it is a 1String an a asterisk
+;; Given string, produces true if it is a 1String an a asterisk
 (check-expect (pattern-only-star? "a") false)
 (check-expect (pattern-only-star? "*") true)
 
