@@ -46,15 +46,14 @@ pattern; if they appear in the target, they should be treated as ordinary charac
 
 (define (pattern-match? p t)
   (cond
-    [(or (both-empty-strings? p t)
-         (pattern-only-star? p)) true]
+    [(or (both-empty-strings? p t) (only-star? p))
+     true]
     [(equal-or-questionmark? p t)
      (pattern-match? (substring p 1) (substring t 1))]
-    [(string=? (string-ith p 0) "*")
-     (pattern-match?
-      (substring p 1)
-      (skip-to-next-match (string-ith (substring p 1) 0) t))]
-    [else false]))
+    [(is-star? p)
+     (pattern-match? (substring p 1) (skip-to-next-match (string-ith (substring p 1) 0) t))]
+    [else
+     false]))
 
 ;; skip-to-next-match : String1 String -> String
 ;; Given String1 and string, produces a substring of the second starting from the first match
@@ -73,12 +72,12 @@ pattern; if they appear in the target, they should be treated as ordinary charac
 (define (both-empty-strings? s1 s2)
   (and (zero? (string-length s1)) (zero? (string-length s2))))
 
-;; pattern-only-star? : String -> Boolean
+;; only-star? : String -> Boolean
 ;; Given string, produces true if it is a 1String an a asterisk
-(check-expect (pattern-only-star? "a") false)
-(check-expect (pattern-only-star? "*") true)
+(check-expect (only-star? "a") false)
+(check-expect (only-star? "*") true)
 
-(define (pattern-only-star? s)
+(define (only-star? s)
   (and (string=? (string-ith s 0) "*") (= (string-length s) 1)))
 
 ;; equal-or-questionmark? : String String -> Boolean
@@ -90,3 +89,11 @@ pattern; if they appear in the target, they should be treated as ordinary charac
 (define (equal-or-questionmark? s1 s2)
   (or (string=? (string-ith s1 0) "?")
       (equal? (string-ith s1 0) (string-ith s2 0))))
+
+;; is-star? : String -> Boolean
+;; Given string, produces true if it starts with an asterisk
+(check-expect (is-star? "abc") false)
+(check-expect (is-star? "*abc") true)
+
+(define (is-star? s)
+  (string=? (string-ith s 0) "*"))
