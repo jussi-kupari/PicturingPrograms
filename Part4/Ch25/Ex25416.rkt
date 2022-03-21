@@ -46,11 +46,11 @@ pattern; if they appear in the target, they should be treated as ordinary charac
 
 (define (pattern-match? p t)
   (cond
-    [(or (both-empty-strings? p t) (only-star? p))
+    [(or (both-empty-strings? p t) (pattern-only-star? p))
      true]
-    [(equal-or-questionmark? p t)
+    [(equal-or-pattern-questionmark? p t)
      (pattern-match? (substring p 1) (substring t 1))]
-    [(is-star? p)
+    [(pattern-is-star? p)
      (pattern-match? (substring p 1) (skip-to-next-match (string-ith (substring p 1) 0) t))]
     [else
      false]))
@@ -72,28 +72,28 @@ pattern; if they appear in the target, they should be treated as ordinary charac
 (define (both-empty-strings? s1 s2)
   (and (zero? (string-length s1)) (zero? (string-length s2))))
 
-;; only-star? : String -> Boolean
+;; pattern-only-star? : String -> Boolean
 ;; Given string, produces true if it is a 1String an a asterisk
-(check-expect (only-star? "a") false)
-(check-expect (only-star? "*") true)
+(check-expect (pattern-only-star? "a") false)
+(check-expect (pattern-only-star? "*") true)
 
-(define (only-star? s)
+(define (pattern-only-star? s)
   (and (string=? (string-ith s 0) "*") (= (string-length s) 1)))
 
-;; equal-or-questionmark? : String String -> Boolean
+;; equal-or-pattern-questionmark? : String String -> Boolean
 ;; Given two Strings, produces true if the first chars match or first starts with a questionmark
-(check-expect (equal-or-questionmark? "abc" "bcc") false)
-(check-expect (equal-or-questionmark? "abc" "adf") true)
-(check-expect (equal-or-questionmark? "?bc" "abb") true)
+(check-expect (equal-or-pattern-questionmark? "abc" "bcc") false)
+(check-expect (equal-or-pattern-questionmark? "abc" "adf") true)
+(check-expect (equal-or-pattern-questionmark? "?bc" "abb") true)
 
-(define (equal-or-questionmark? s1 s2)
+(define (equal-or-pattern-questionmark? s1 s2)
   (or (string=? (string-ith s1 0) "?")
       (equal? (string-ith s1 0) (string-ith s2 0))))
 
-;; is-star? : String -> Boolean
+;; pattern-is-star? : String -> Boolean
 ;; Given string, produces true if it starts with an asterisk
-(check-expect (is-star? "abc") false)
-(check-expect (is-star? "*abc") true)
+(check-expect (pattern-is-star? "abc") false)
+(check-expect (pattern-is-star? "*abc") true)
 
-(define (is-star? s)
+(define (pattern-is-star? s)
   (string=? (string-ith s 0) "*"))
