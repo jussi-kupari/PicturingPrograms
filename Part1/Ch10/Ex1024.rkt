@@ -20,12 +20,10 @@
 ;Scene
 (define SCENE (empty-scene 50 50))
 
-
 ;; -- Data Definition
 
 ;; DigitalCounter is a Natural
 ;; interp. a counter number
-
 
 ;; -- Functions
 
@@ -36,7 +34,6 @@
   (big-bang dc
     (on-tick tock 1)
     (to-draw render-counter)))
-
 
 ;; DC -> DC
 ;; Given a counter number, produce next number

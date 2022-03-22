@@ -9,7 +9,6 @@
 ; .
 ; 
 
-
 (require picturing-programs)
 
 ; diamond: string (color of diamond)
@@ -33,15 +32,7 @@
   ; "solid" 
   ...)
 
-
 (define (diamond col side)
   (above (triangle side "solid" col)
                      (flip-vertical (triangle side "solid" col))))
-
-
-
-
-
-
-
 

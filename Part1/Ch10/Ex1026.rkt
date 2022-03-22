@@ -17,14 +17,12 @@
 ;Scene
 (define SCENE (empty-scene 500 500))
 
-
 ;; -- Data Definition
 
 ;; MousePosition is a posn
 ;; interp. as the x,y position of mouse cursor
 
 (define MP1 (make-posn 100 100))
-
 
 ;; -- Functions
 
@@ -35,7 +33,6 @@
   (big-bang mp
     (on-mouse update-position)
     (to-draw render-position)))
-
 
 ;; MP Natural Natural MouseEv -> MP
 ;; Given MP mouse position and mouseEv, make new position
@@ -50,7 +47,6 @@
     [(mouse=? "move" me) (make-posn x y)]
     [else mp]))
 
-
 ;; MP -> Image
 ;; Given MP, produce image at the correct position
 
@@ -58,7 +54,6 @@
   (place-image
    (render-cursor mp) (posn-x mp) (posn-y mp)
    SCENE))
-
 
 ;; MP -> Image
 ;; Given mouse position, produce image of cursor

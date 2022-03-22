@@ -6,7 +6,6 @@
 ; Exercise 5.11.2
 ; Add a body to the pinwheel function of Exercise 5.9.3.
 
-
 ; pinwheel: image -> image
 ; Produces four copies of the original image in a square
 ; starting with the original image on the top left and
@@ -20,7 +19,6 @@
 (define (pinwheel img)
   ; img image
   ...)
-
 
 (define (pinwheel img)
   (beside

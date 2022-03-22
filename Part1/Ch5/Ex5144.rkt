@@ -13,7 +13,6 @@
 ; Hint: If you’ve already read Chapter 7, you’ll be tempted to do this using arithmetic.
 ; But it can be done without arithmetic, using only what you’ve seen so far.
 
-
 (require picturing-programs)
 
 ; circle-in-square: number (length of side)
@@ -40,10 +39,3 @@
   (overlay
    (ellipse l l "outline" col2)
    (square l "outline" col1)))
-
-
-
-
-
-
-

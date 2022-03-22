@@ -7,7 +7,6 @@
 ; produces a picture of the first string, in 18-point black type, on a background
 ; rectangle of the specified color, width, and height.
 
-
 (require picturing-programs)
 
 ; text-box: string (text)
@@ -36,12 +35,4 @@
 (define (text-box message color width height)
   (overlay (text message 18 "black")
            (rectangle width height "outline" color)))
-
-
-
-
-
-
-
-
 

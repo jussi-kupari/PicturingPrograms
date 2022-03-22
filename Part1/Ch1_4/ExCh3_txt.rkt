@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname Ch3_txt) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ExCh3_txt) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 (require picturing-programs)
 
 ; Ex 3.3.4
@@ -9,12 +9,9 @@
  (circle 10 "solid" "orange")
  (square 20 "solid" "blue"))
 
-
 (overlay
  (ellipse 20 20 "solid" "orange")
  (square 20 "solid" "blue"))
-
-
 
 ; Ex 3.3.7
 
@@ -40,8 +37,6 @@
 
 (overlay TRI2 SQRE2)
 
-
-
 ;  Ex 3.4.4
 ; Write the function contracts for ellipse, circle, triangle,
 ; and star-polygon, using the standard convention.
@@ -59,45 +54,32 @@
 ; star-polygon: number(side-lenght) number(side-count)
 ;               number(step-count) string("outline" or "solid")
 ;               string(color) -> image
-; 
-
 
 ; Ex 3.5.2
 
 (crop-bottom . 25)
 
-
 ; Ex 3.5.2
 
 (crop/align "left" "top" 20 20 .)
-
-
 
 ; SIDEBAR
 
 (rotate-cw
  (crop-bottom (rotate-ccw .) 25))
 
-
-
-
 ; Ex 3.5.4
 
 (crop-top (circle 30 "outline" "green") 15)
-
 
 ; Ex 3.5.5
 
 (crop-bottom
  (crop-left (ellipse 50 30 "solid" "green") 25) 15)
 
-
 ; Ex 3.5.7
 
 (crop-left . (/ (image-width .) 3))
-
-
-
 
 ; Ex 3.5.8
 
@@ -106,15 +88,12 @@
 
 (place-image ORANGE-RECT 55 15 BLUE-RECT)
 
-
 ; Ex 3.5.9
 
 (define WANTED (text "Wanted!" 16 "red"))
 
 (place-image WANTED
              (/ (image-width .) 2) (- (image-height .) 15) .)
-
-
 
 ; Ex 3.5.10
 
@@ -127,4 +106,3 @@
 (rectangle 40 26 "solid" "dark blue")
 
 (rotate-180 (scale 2 (rectangle 20 13 "solid" "dark blue")))
-

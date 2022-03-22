@@ -6,7 +6,6 @@
 ; Exercise 5.9.7
 ; Add an inventory to the lollipop function of Exercise 5.8.6.
 
-
 ; lollipop: number (radius on lollipop "head")
 ;           number (length of lollopop "stick")
 ;           string (color of lollipop)          -> image

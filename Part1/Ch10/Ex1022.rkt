@@ -19,7 +19,6 @@
 ;Scene
 (define SCENE (empty-scene 200 200))
 
-
 ;; -- Functions
 
 ;; Main
@@ -60,7 +59,6 @@
     (on-mouse chop-string)
     (to-draw render-image)))
 
-
 ;; String Number Number MouseEv -> String
 (check-expect (chop-string "abc" 0 0 "move")        "bc")
 (check-expect (chop-string "abc" 0 0 "button-down") "bc")
@@ -72,23 +70,3 @@
     [(or (mouse=? "move" me) (mouse=? "button-down" me))
      (if (zero? (string-length s)) "a" (substring s 1))]
     [else s]))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

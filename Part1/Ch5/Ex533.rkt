@@ -9,7 +9,6 @@
 ; right, rotated 180◦ in the bottom right, and rotated 90◦
 ; counterclockwise in the bottom left.
 
-
 ;; pinwheel: image -> image
 ;; Produces four copies of the original image in a square
 ;; starting with the original image on the top left and

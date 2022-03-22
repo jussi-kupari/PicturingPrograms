@@ -7,7 +7,6 @@
 ; 
 ; .
 
-
 (require picturing-programs)
 
 ; caption-below: image
@@ -17,7 +16,6 @@
 
 (check-expect (caption-below pic:bloch "Dr. Bloch")
               (above pic:bloch (text "Dr. Bloch" 20 "black")))
-
 #;
 (define (caption-below pic cap) ; skeleton
   ; pic image
@@ -26,17 +24,5 @@
   ; 20
   ...)
 
-
 (define (caption-below pic cap)
   (above pic (text cap 20 "black")))
-
-
-
-
-
-
-
-
-
-
-

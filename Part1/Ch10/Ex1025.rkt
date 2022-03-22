@@ -22,7 +22,6 @@
 ;; Counter is a Natural
 ;; interp. a number counter that also serves as the x-position
 
-
 ;; -- Functions
 
 ;; Counter -> Counter

@@ -6,7 +6,6 @@
 ; Exercise 5.11.4
 ; Add a body to the bullseye function of Exercise 5.9.5.
 
-
 ; bullseye: number (outer circle radius)
 ;           number (inner circle radius)
 ;           string (outer ring color)

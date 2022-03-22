@@ -6,8 +6,6 @@
 ; Exercise 5.11.3
 ; Add a body to the checkerboard2 function of Exercise 5.9.4.
 
-
-
 ; checkerboard2 : string (top-left-color)
 ;                 string (top-right-color) -> image
 ; Assumes that both strings are color names.
@@ -29,8 +27,6 @@
   ; col2 string
   ; 20 number
   ...)
-
-
 
 (define (checkerboard2 col1 col2)
   (beside

@@ -9,7 +9,6 @@
 ; dius (which you may assume is more than 10). The 100-pixel separation is measured from
 ; edge to edge, not center to center.
 
-
 (require picturing-programs)
 
 ; two-eyes: number (radius)
@@ -31,10 +30,7 @@
   ; "black"
   ...)
 
-
 (define (two-eyes r col) 
   (overlay/xy
    (overlay (circle 10 "solid" "black") (circle r "solid" col))
    (+ 100 (* r 2)) 0 (overlay (circle 10 "solid" "black") (circle r "solid" col))))
-
-

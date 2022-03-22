@@ -22,7 +22,6 @@
 ;Scene
 (define SCENE (empty-scene 500 500))
 
-
 ;; Main
 ;; initialize world with (main "cat")
 
@@ -40,7 +39,6 @@
    (substring s 0 (round (/ (string-length s) 2)))
    "xyz"
    (substring s (round (/ (string-length s) 2)))))
-
 
 ;; String -> Image
 ;; Given a string, produces an image of it

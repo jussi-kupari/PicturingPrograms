@@ -20,7 +20,6 @@
 ; and returns all but the first character. (For now, you may assume the
 ; string is non-empty we’ll drop this assumption later.)
 
-
 ;; String -> String
 ;; Given a non-empty string, produces the string without the first character
 (check-expect (chop-first-char "jussi") "ussi") 
@@ -33,7 +32,6 @@
 ; given string. (For now, you may assume the string is non-empty. We’ll
 ; drop this assumption later.)
 
-
 ;; String -> String
 ;; Given a string, produces the first character of the string
 (check-expect (first-char "jussi") "j")
@@ -45,7 +43,6 @@
 ; and returns the last half of it.
 ; Hint: Be sure to test your program on both even-length and odd-length
 ; strings. Also try some special cases like the empty string, "".
-
 
 ;; String -> String
 ;; Given a String, produces a string of the last half of it.
@@ -61,7 +58,6 @@
 ; happen? Again, be sure to test this on both even-length and odd-length
 ; strings, and on the empty string.
 
-
 ;; String -> String
 ;; Given a String, produces a string of the first half of it.
 (check-expect (first-half "abcabc") "abc")
@@ -73,11 +69,9 @@
 (string-append (first-half "jussi")
                (last-half "jussi"))
 
-
 ; Exercise 9.2.7 Develop a function named number->image that takes in a
 ; number and returns an image of that number in (say) 18-point blue font.
 ; Hint: Combine the built-in functions text and number->string.
-
 
 ;; Number -> Image
 ;; Given a number, produces a text-image of that string

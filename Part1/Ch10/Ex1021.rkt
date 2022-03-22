@@ -36,7 +36,6 @@
 (define (grow-string s)
   (string-append s "b"))
 
-
 ;; String -> Image
 ;; Given a string, produces an image of it
 (check-expect (render-image "abc")(overlay (text "abc" 18 "green") SCENE))
@@ -44,12 +43,10 @@
 (define (render-image s)
   (overlay (text s 18 "green") SCENE))
 
-
 ; Exercise 10.2.2
 ; Add a mouse handler to the previous animation: every time the
 ; mouse is moved or clicked, one character will be chopped off
 ; the beginning of the string.
-
 
 ;; Main.v2
 ;; initialize world with (main.v2 "a")
@@ -71,23 +68,3 @@
     [(or (mouse=? "move" me) (mouse=? "button-down" me))
      (if (zero? (string-length s)) "a" (substring s 1))]
     [else s]))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
