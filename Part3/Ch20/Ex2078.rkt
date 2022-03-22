@@ -1,18 +1,18 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname Ex2078) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-; Exercise 20.7.8
-; Develop a function replace-with-white which takes in a color and
-; an image, and replaces every pixel in the image that is the specified
-; color with white. In other words, if we had this function, we could write
-; replace-green-white as
-; 
-; (define (replace-green-white pic)
-; (replace-with-white "green" pic))
-; 
-; Hint: The helper function in this case needs to know what color to replace,
-; i.e. the color parameter of replace-with-white. One way to do this is to
-; build-image/extra or map-image/extra (look them up).
+#|Exercise 20.7.8
+Develop a function replace-with-white which takes in a color and
+an image, and replaces every pixel in the image that is the specified
+color with white. In other words, if we had this function, we could write
+replace-green-white as
+
+(define (replace-green-white pic)
+(replace-with-white "green" pic))
+
+Hint: The helper function in this case needs to know what color to replace,
+i.e. the color parameter of replace-with-white. One way to do this is to
+build-image/extra or map-image/extra (look them up).|#
 
 (require picturing-programs)
 
@@ -25,8 +25,6 @@
 
 (define (replace-with-white color img)
   (map-image/extra color->white img color))
-
-
 
 ;; color->white : Number Number Color Color -> Color
 ;; Given xy and color, replaces it with pure white if it is of given color
