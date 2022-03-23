@@ -41,7 +41,7 @@ make sure your test cases satisfy the assumption.|#
 (check-expect (smaller-or-equal? 10 10) true)
 (check-expect (smaller-or-equal? 10 11) true)
 
-(define(smaller-or-equal? n1 n2)
+(define (smaller-or-equal? n1 n2)
   (<= n1 n2))
 
 ;; insert : Number LON -> LON
