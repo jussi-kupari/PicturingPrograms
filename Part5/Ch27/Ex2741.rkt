@@ -7,6 +7,8 @@ increases smoothly from top to bottom, regardless of the height of the image.|#
 
 (require picturing-programs)
 
+;; apply-blue-gradient : Image -> Image
+;; Given Image, produces the image with a smooth gradient of blue from top to bottom
 (define (apply-blue-gradient pic)
   (local [(define (new-pixel x y old-color)
             (make-color (color-red old-color)
