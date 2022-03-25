@@ -17,7 +17,7 @@ make-wide-stripes that does the same thing only with each stripe 5 pixels high: 
   (build3-image x y red-function green-function blue-function))
 
 ;; red-function : Number Number -> Number
-;; Given x and y, produces 255 for red if x is divisible by 10
+;; Given x and y, produces 255 if y is within 5 above of a number divisible by ten, else 0 
 (check-expect (red-function 0 10) 255)
 (check-expect (red-function 0 11) 255)
 (check-expect (red-function 0 12) 255)
@@ -46,7 +46,7 @@ make-wide-stripes that does the same thing only with each stripe 5 pixels high: 
 (define (green-function x y) 0)
 
 ;; blue-function : Number Number -> Number
-;; Given x and y, produces 255 for red if x is divisible by 10 but not 5
+;; Given x and y, produces 255 if y is within 5 above of a number divisible by five but not ten, else 0 
 (check-expect (blue-function 0 20) 0)
 (check-expect (blue-function 0 21) 0)
 (check-expect (blue-function 0 22) 0)
